@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <style>
+      td {
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+      }
+      #gf {
+        background-color: blue;
+        width: 90px
+        height: 90px;
+      }
+      #block {
+        width: 10px;
+        height: 10px;
+
+      }
+.c {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+.cc {
+  width: 30px;
+  height: 30px;
+
+}
+#plp {
+  z-index: 2;
+}
+#login {
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+
+}
+#gff {
+  display: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="login" width="100%" height="100%">
+    <p>sign up<input type="range" max="1" min="0" id="isl">log in</p><br>
+
+      <input type="text" placeholder="user name" /><br>
+      <input type="password" placeholder="password" /><br>
+      <button type="button" onclick="log()" name="button">login</button>
+    </div>
+    <div id="gff">
+<p>score:<span id="scoree">0</span></p>
+<button onclick="ss()">share yore score</button>
+    <table>
+      <tr>
+        <td class="c"></td>
+        <td class="cc" onclick="up()"><center>&#8593;</center></td>
+        <td class="c"></td>
+      </tr>
+      <tr>
+        <td class="cc" onclick="left()">&#8592;</td>
+        <td class="cc" onclick="ac()"><svg width="30" height="30"><rect x="10" y="10" width="10" height="10" ry="5" /></svg></td>
+        <td class="cc" onclick="right()">&#8594;</td>
+
+      </tr>
+      <tr>
+        <td class="c"></td>
+        <td class="cc" onclick="down()"><center>&#8595;</center></td>
+        <td class="c"></td>
+      </tr>
+    </table>
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+        <rect x="45" y="0" width="10" height="100" fill="brown" />
+      </svg>
+    </template>
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+        <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="brown" />
+      </svg>
+    </template>
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+        <rect x="0" y="0" width="100" height="100" fill="brown" />
+
+      </svg>
+    </template>
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+
+
+        <polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/>
+
+      </svg>
+    </template>
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+        <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="white" stroke="black" />
+
+
+      </svg>
+    </template>
+
+
+
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+        <polygon points="50,50 0,0 100,0 50,50 100,0 100,100 50,50 100,100 0,100 50,50 0,100  0,0 50,50 0,0" fill="red" stroke="black" strokeWidth="3" />
+
+
+      </svg>
+    </template>
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+        <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="red" stroke="black" />
+
+
+      </svg>
+    </template>
+   
+    <template>
+      <svg id="qwer" width="10" height="10" viewbox="0 0 100 100">
+        <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="blue" stroke="black" />
+
+
+      </svg>
+    </template>
+
+    <table>
+      <tr>
+        <td onclick="ad(1)" name="aee"></td>
+        <td onclick="ad(2)" name="aee"></td>
+        <td onclick="ad(3)" name="aee"></td>
+      </tr>
+      <tr>
+        <td onclick="ad(4)" name="aee"></td>
+        <td onclick="ad(5)" name="aee"></td>
+        <td onclick="ad(6)" name="aee"></td>
+        <th width="50">=</th>
+        <td id="a" onclick="get()"></td>
+      </tr>
+      <tr>
+        <td onclick="ad(7)" name="aee"></td>
+        <td onclick="ad(8)" name="aee"></td>
+        <td onclick="ad(9)" name="aee"></td>
+      </tr>
+      <tr>
+        <th><button type="button" width="50px" height="50px" onclick="clear()" name="button">clear</button></td>
+      </tr>
+      <tr>
+        <th height="50"></th>
+      </tr>
+<svg id="gf" width="150px" height="150px">
+<g id="ga">
+<g name="block">
+ <rect name="block" x="0" y="0" width="10px" height="10px" id="block" fill="brown">
+</g>
+</g>
+<g name="mob">
+ <rect name="block" x="10" y="0" width="10px" height="10px" id="block" fill="red">
+</g>
+<!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
+<rect  id="pl" x="0" y="0" width="10px" height="10px" fill="blue" />
+<!-- <polygon id="pl" x="0" y="0" points="4,10 1,6 3,6 3,2 5,0 7,2 7,6 6,6 6,10 4,10" fill="red" stroke="black" /> -->
+
+</svg>
+
+
+
+    </table>
+    <table>
+      <tr>
+        <td name="ae" onclick="inv(0)"></td>
+        <td name="ae" onclick="inv(1)"></td>
+        <td name="ae" onclick="inv(2)"></td>
+        <td name="ae" onclick="inv(3)"></td>
+        <td name="ae" onclick="inv(4)"></td>
+        <td name="ae" onclick="inv(5)"></td>
+        <td name="ae" onclick="inv(6)"><svg width="50" height="50" viewbox="0 0 100 100">
+          <rect x="0" y="0" width="100" height="100" fill="brown" />
+
+        </svg></td>
+      </tr>
+    </table>
+
+
+  score chat
+  <div id=box></div>
+</div>
+    <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
+<script>
+
+        var password
+        var userName2
+
+                var pubnub = new PubNub({
+                    publishKey: 'demo',
+                    subscribeKey: 'demo'
+                });
+                function $(id) {
+                    return document.getElementById(id);
+                }
+                var box = $('box'),
+                    input = $('scoree'),
+                    channel = 'blockservivel',
+                    res = $("res");
+                pubnub.addListener({
+                    message: function(obj) {
+
+                        box.innerHTML = ('' + obj.message).replace(/[<>]/g, '') + '<br>' + box.innerHTML
+
+
+                    }
+                });
+                pubnub.subscribe({
+
+                      channels: [channel]
+
+
+                });
+                function ss() {
+                  pubnub.publish({
+                      channel: channel,
+                      message: userName2 + ":" + input.innerHTML
+
+                  });
+                }
+
+
+
+
+
+
+
+            var name
+            var password
+            var userName2
+
+
+function log() {
+  if(document.getElementById('isl').value == 1){
+    password = localStorage.password2
+    userName2 = localStorage.userName3
+     name = document.getElementsByTagName("input")[1].value
+       name2 = document.getElementsByTagName("input")[2].value
+      if (name != userName2 || name2 != password) {
+alert("try agen")
+      }else if (name == userName2 && name2 == password) {
+        document.getElementById("gff").style.display = "block";
+        document.getElementById("login").style.display = "none";
+      }
+  }else if (document.getElementById('isl').value == 0)
+
+    localStorage.userName3 = document.getElementsByTagName("input")[1].value
+    localStorage.password2 = document.getElementsByTagName("input")[2].value
+
+  }
+
+      const slot = [0,0,0,0,0,0,0,0,0,0];
+      const aa = [0,0];
+      const is = [0,0,0,0,0,0,1]
+      const mhp = [100,100,100,100,100,100,100,100,100,100,100]
+      var ei = 1;
+      var itm
+      var x = 0
+      var y = 0
+var bx = 10
+var by = 0;
+var cx = 1
+var cy = 0
+const mx = [0,0,0,0,0,0,0,0,0,0,0]
+const my = [0,0,0,0,0,0,0,0,0,0,0]
+      var cln
+      var score = 0;
+      var mc = 10;
+
+
+        for (var i = 0; i < 450; i++) {
+          // Get the last <li> element ("Milk") of <ul> with id="myList2"
+ var itm = document.getElementsByTagName("g")[1];
+
+
+ var cln = itm.cloneNode(true);
+var ci = cln.lastChild;
+ci.setAttribute("x",bx);
+ci.setAttribute("y",by);
+bx += 10;
+ document.getElementById("ga").appendChild(cln);
+ if(bx == 150) {
+   bx = 0;
+   by += 10
+ }
+ if(by == 150) {
+   i = 1000;
+ }
+        }
+
+        for (var i = 0; i < 10; i++) {
+          // Get the last <li> element ("Milk") of <ul> with id="myList2"
+ var itm = document.getElementsByName("mob")[0];
+mx[i] = Math.floor(Math.random() * 15)
+my[i] = Math.floor(Math.random() * 15)
+mx[i] *= 10
+my[i] *= 10
+ var cln = itm.cloneNode(true);
+var ci = cln.lastChild;
+ci.setAttribute("x",mx[i]);
+ci.setAttribute("y",my[i]);
+
+ document.getElementById("ga").appendChild(cln);
+
+        }
+
+
+function left(px) {
+  if(x != 0) {
+  x-=10;
+cx -= 1
+  // var s = document.getElementById("pl");
+  // var t = document.getElementsByName("bl")[x]
+  // t.appendChild(s);
+  document.getElementById("pl").setAttribute("x",x)
+}
+
+}
+function right(px) {
+  if(x != 140) {
+     cx += 1
+  x+=10
+  // var s = document.getElementById("pl");
+  // var t = document.getElementsByName("bl")[x]
+  // t.appendChild(s);
+  document.getElementById("pl").setAttribute("x",x)
+}
+}
+function up(px) {
+  if(y != 0) {
+    cx -= 30
+  y -= 10
+  document.getElementById("pl").setAttribute("y",y);
+}
+}
+function down(px) {
+    if(y != 140) {
+      cx += 30
+
+  y += 10
+  document.getElementById("pl").setAttribute("y",y);
+}
+}
+function ac() {
+  for (var i = 0; i < mhp.length; i++) {
+    if(x == mx[i] && y == my[i]) {
+
+      if(ei == 3){
+        mhp[i] -= 10;
+        if (mhp[i] <= 0) {
+          
+          mx[i] = -10
+          my[i] = -10
+          document.getElementsByName("mob")[i].innerHTML = "";
+          // document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+          score += 1
+          document.getElementById("scoree").innerHTML = score;
+          mc -= 1
+          if (mc == 0) {
+            for (var i = 0; i < 10; i++) {
+              // Get the last <li> element ("Milk") of <ul> with id="myList2"
+     var itm = document.getElementById("qwer");
+    mx[i] = Math.floor(Math.random() * 15)
+    my[i] = Math.floor(Math.random() * 15)
+    mx[i] *= 10
+    my[i] *= 10
+     var cln = itm.cloneNode(true);
+    var ci = document.getElementsByName("mob")[i];
+    ci.setAttribute("x",mx[i]);
+    ci.setAttribute("y",my[i]);
+    ci.appendChild("cln")
+    mhp[i] = 100
+     
+    
+            }
+          }
+
+
+        }
+      }
+      if(ei == 5){
+        mhp[i] -= 25;
+        if (mhp[i] <= 0) {
+          mx[i] = -10
+          my[i] = -10
+          document.getElementsByName("mob")[i].innerHTML = "";
+          // document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+          score += 1
+          document.getElementById("scoree").innerHTML = score;
+          mc -= 1
+          if (mc == 0) {
+            for (var i = 0; i < 10; i++) {
+              // Get the last <li> element ("Milk") of <ul> with id="myList2"
+     var itm = document.getElementById("qwer");
+    mx[i] = Math.floor(Math.random() * 15)
+    my[i] = Math.floor(Math.random() * 15)
+    mx[i] *= 10
+    my[i] *= 10
+     var cln = itm.cloneNode(true);
+    var ci = document.getElementsByName("mob")[i];
+    ci.setAttribute("x",mx[i]);
+    ci.setAttribute("y",my[i]);
+    ci.appendChild("cln")
+    mhp[i] = 100
+     
+    
+            }
+          }
+
+        }
+        }
+        if(ei == 7){
+          mhp[i] -= 50;
+          if (mhp[i] <= 0) {
+            mx[i] = -10
+            my[i] = -10
+            document.getElementsByName("mob")[i].innerHTML = "";
+            // document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+            score += 1
+            document.getElementById("scoree").innerHTML = score;
+            mc -= 1
+            if (mc == 0) {
+              for (var i = 0; i < 10; i++) {
+                // Get the last <li> element ("Milk") of <ul> with id="myList2"
+       var itm = document.getElementById("qwer");
+      mx[i] = Math.floor(Math.random() * 15)
+      my[i] = Math.floor(Math.random() * 15)
+      mx[i] *= 10
+      my[i] *= 10
+       var cln = itm.cloneNode(true);
+      var ci = document.getElementsByName("mob")[i];
+      ci.setAttribute("x",mx[i]);
+      ci.setAttribute("y",my[i]);
+      ci.appendChild("cln")
+      mhp[i] = 100
+       
+      
+              }
+            }
+
+          }
+          }
+      }
+  }
+}
+      function inv(a) {
+        ei = is[a]
+      }
+
+      function ad(a) {
+
+        document.getElementById("a").innerHTML = "";
+        slot[a] = ei;
+        if (ei == 1) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[2];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 2) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[0];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 3) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[1];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 4) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[3];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 5) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[4];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 6) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[5];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 7) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[6];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
+          var temp = document.getElementsByTagName("template")[0];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+        if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
+          var temp = document.getElementsByTagName("template")[1];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+        if (slot[1] == 1 && slot[2] == 1 && slot[3] == 1 && slot[4] == 1 && slot[5] == 0 && slot[6] == 1 && slot[7] == 1 && slot[8] == 1 && slot[9] == 1) {
+          var temp = document.getElementsByTagName("template")[3];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+        if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
+          var temp = document.getElementsByTagName("template")[4];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+        if (slot[1] == 1 && slot[2] == 5 && slot[3] == 1 && slot[4] == 4 && slot[5] == 1 && slot[6] == 5 && slot[7] == 1 && slot[8] == 5 && slot[9] == 1) {
+          var temp = document.getElementsByTagName("template")[5];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+        if (slot[1] == 0 && slot[2] == 6 && slot[3] == 0 && slot[4] == 0 && slot[5] == 6 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
+
+          var temp = document.getElementsByTagName("template")[6];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+      }
+
+      function get() {
+        if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
+          score += 1
+          document.getElementById("scoree").innerHTML = score;
+        document.getElementById("a").innerHTML = "";
+         slot[2] = 0;
+         slot[5] = 0;
+         aa[0] += 1;
+
+         for(var afa = 0;afa < 9; afa++) {
+          document.getElementsByName("aee")[afa].innerHTML = "";
+         }
+         for(var ae = 0; ae <= 6; ae++){
+
+           if (is[ae] == 0) {
+document.getElementsByName("ae")[ae].innerHTML = "";
+             var temp = document.getElementsByTagName("template")[0];
+   var clon = temp.content.cloneNode(true);
+   document.getElementsByName("ae")[ae].appendChild(clon);
+   var e = ae + 1;
+   is[ae] = 2;
+
+   ae = 10;
+ }
+         }
+//1
+       }else if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
+         score += 1
+         document.getElementById("scoree").innerHTML = score;
+       document.getElementById("a").innerHTML = "";
+        slot[2] = 0;
+        slot[5] = 0;
+        slot[8] = 0;
+
+        ei = 1;
+for(var afa = 0;afa < 9; afa++) {
+ document.getElementsByName("aee")[afa].innerHTML = "";
+}
+        for(var ae = 0; ae <= 6; ae++){
+          if (is[ae] == 1) {
+            document.getElementsByName("ae")[ae].innerHTML = "";
+            is[ae] = 0;
+          }
+          if (is[ae] == 0) {
+
+            var temp = document.getElementsByTagName("template")[1];
+  var clon = temp.content.cloneNode(true);
+  document.getElementsByName("ae")[ae].appendChild(clon);
+
+  is[ae] = 3;
+
+  ae = 10;
+}
+        }
+//1
+      }else if (slot[1] == 1 && slot[2] == 1 && slot[3] == 1 && slot[4] == 1 && slot[5] == 0 && slot[6] == 1 && slot[7] == 1 && slot[8] == 1 && slot[9] == 1) {
+        score += 1
+        document.getElementById("scoree").innerHTML = score;
+     document.getElementById("a").innerHTML = "";
+      slot[1] = 0;
+      slot[2] = 0;
+      slot[3] = 0;
+      slot[4] = 0;
+      slot[5] = 0;
+      slot[6] = 0;
+      slot[7] = 0;
+      slot[8] = 0;
+      slot[9] = 0;
+
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+}
+      for(var ae = 0; ae <= 6; ae++){
+
+        if (is[ae] == 0) {
+
+          var temp = document.getElementsByTagName("template")[3];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 4;
+
+ae = 10;
+}
+      }
+//1
+    }else if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
+      score += 1
+      document.getElementById("scoree").innerHTML = score;
+    document.getElementById("a").innerHTML = "";
+     slot[1] = 0;
+     slot[2] = 0;
+     slot[3] = 0;
+     slot[4] = 0;
+     slot[5] = 0;
+     slot[6] = 0;
+     slot[7] = 0;
+     slot[8] = 0;
+     slot[9] = 0;
+
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+}
+     for(var ae = 0; ae <= 6; ae++){
+       if (is[ae] == 4) {
+         document.getElementsByName("ae")[ae].innerHTML = "";
+         is[ae] = 0;
+       }
+       if (is[ae] == 2) {
+         document.getElementsByName("ae")[ae].innerHTML = "";
+         is[ae] = 0;
+       }
+       if (is[ae] == 0) {
+
+         var temp = document.getElementsByTagName("template")[4];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 5;
+
+ae = 10;
+}
+     }
+//1
+   }else if (slot[1] == 1 && slot[2] == 5 && slot[3] == 1 && slot[4] == 4 && slot[5] == 1 && slot[6] == 5 && slot[7] == 1 && slot[8] == 5 && slot[9] == 1) {
+     score += 1
+     document.getElementById("scoree").innerHTML = score;
+   document.getElementById("a").innerHTML = "";
+    slot[1] = 0;
+    slot[2] = 0;
+    slot[3] = 0;
+    slot[4] = 0;
+    slot[5] = 0;
+    slot[6] = 0;
+    slot[7] = 0;
+    slot[8] = 0;
+    slot[9] = 0;
+
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+}
+    for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 5) {
+  document.getElementsByName("ae")[ae].innerHTML = "";
+  is[ae] = 0;
+}
+if (is[ae] == 4) {
+  document.getElementsByName("ae")[ae].innerHTML = "";
+  is[ae] = 0;
+}
+
+      if (is[ae] == 0) {
+
+        var temp = document.getElementsByTagName("template")[5];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 6;
+
+ae = 10;
+}
+    }
+
+  }else if (slot[1] == 0 && slot[2] == 6 && slot[3] == 0 && slot[4] == 0 && slot[5] == 6 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
+    score += 1
+    document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+
+}
+for(var ae = 0; ae <= 6; ae++){
+  document.getElementsByName("ae")[ae].innerHTML = "";
+  inv[ae] = 0;
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[6];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 7;
+
+ae = 10;
+}
+}
+
+}
+}
+
+
+
+    function clear() {
+      slot[1] = 0;
+      slot[2] = 0;
+      slot[3] = 0;
+      slot[4] = 0;
+
+      slot[5] = 0;
+      slot[6] = 0;
+      slot[7] = 0;
+      slot[8] = 0;
+      slot[9] = 0;
+
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+}
+}
+
+
+    </script>
+  </body>
+</html>
