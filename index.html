@@ -115,16 +115,26 @@
       </svg>
     </template>
     <template>
-      <svg width="50" height="50" viewbox="0 0 100 100">
-        <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="red" stroke="black" />
 
+        <svg width="50" height="50" viewbox="0 0 100 100">
+          <rect x="45" y="0" width="10" height="100" fill="red" />
+        </svg>
 
-      </svg>
     </template>
-   
     <template>
-      <svg id="qwer" width="10" height="10" viewbox="0 0 100 100">
-        <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="blue" stroke="black" />
+
+        <svg width="50" height="50" viewbox="0 0 100 100">
+
+          <polygon points="0,0 0,100 50,50 100,100 100,0 0,0" fill="red" stroke="black" />
+
+        </svg>
+
+    </template>
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+        <polygon points="40,100 40,40 30,60 30,20 50,0 70,20 70,60 60,40 60,100 40,100" fill="red" stroke="black" />
+
+
 
 
       </svg>
@@ -160,8 +170,8 @@
  <rect name="block" x="0" y="0" width="10px" height="10px" id="block" fill="brown">
 </g>
 </g>
-<g name="mob">
- <rect name="block" x="10" y="0" width="10px" height="10px" id="block" fill="red">
+<g >
+ <rect name="mob" x="10" y="0" width="10px" height="10px" id="block" fill="red">
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
 <rect  id="pl" x="0" y="0" width="10px" height="10px" fill="blue" />
@@ -307,9 +317,9 @@ my[i] = Math.floor(Math.random() * 15)
 mx[i] *= 10
 my[i] *= 10
  var cln = itm.cloneNode(true);
-var ci = cln.lastChild;
-ci.setAttribute("x",mx[i]);
-ci.setAttribute("y",my[i]);
+// var ci = cln.lastChild;
+cln.setAttribute("x",mx[i]);
+cln.setAttribute("y",my[i]);
 
  document.getElementById("ga").appendChild(cln);
 
@@ -359,98 +369,100 @@ function ac() {
       if(ei == 3){
         mhp[i] -= 10;
         if (mhp[i] <= 0) {
-          
+
           mx[i] = -10
           my[i] = -10
-          document.getElementsByName("mob")[i].innerHTML = "";
-          // document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+          document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
+          document.getElementsByName("mob")[i].setAttribute("y",my[i]);
           score += 1
           document.getElementById("scoree").innerHTML = score;
           mc -= 1
           if (mc == 0) {
             for (var i = 0; i < 10; i++) {
               // Get the last <li> element ("Milk") of <ul> with id="myList2"
-     var itm = document.getElementById("qwer");
+
     mx[i] = Math.floor(Math.random() * 15)
     my[i] = Math.floor(Math.random() * 15)
     mx[i] *= 10
     my[i] *= 10
-     var cln = itm.cloneNode(true);
+
     var ci = document.getElementsByName("mob")[i];
     ci.setAttribute("x",mx[i]);
     ci.setAttribute("y",my[i]);
-    ci.appendChild("cln")
+
     mhp[i] = 100
-     
-    
-            }
+
+}
           }
 
 
-        }
+}
       }
       if(ei == 5){
         mhp[i] -= 25;
         if (mhp[i] <= 0) {
           mx[i] = -10
           my[i] = -10
-          document.getElementsByName("mob")[i].innerHTML = "";
-          // document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+          document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
+          document.getElementsByName("mob")[i].setAttribute("y",my[i]);
           score += 1
           document.getElementById("scoree").innerHTML = score;
           mc -= 1
           if (mc == 0) {
             for (var i = 0; i < 10; i++) {
               // Get the last <li> element ("Milk") of <ul> with id="myList2"
-     var itm = document.getElementById("qwer");
+
     mx[i] = Math.floor(Math.random() * 15)
     my[i] = Math.floor(Math.random() * 15)
     mx[i] *= 10
     my[i] *= 10
-     var cln = itm.cloneNode(true);
+
     var ci = document.getElementsByName("mob")[i];
     ci.setAttribute("x",mx[i]);
     ci.setAttribute("y",my[i]);
-    ci.appendChild("cln")
+
     mhp[i] = 100
-     
-    
-            }
+
+}
           }
 
         }
         }
-        if(ei == 7){
-          mhp[i] -= 50;
-          if (mhp[i] <= 0) {
-            mx[i] = -10
-            my[i] = -10
-            document.getElementsByName("mob")[i].innerHTML = "";
-            // document.getElementsByName("mob")[i].setAttribute("y",my[i]);
-            score += 1
-            document.getElementById("scoree").innerHTML = score;
-            mc -= 1
-            if (mc == 0) {
-              for (var i = 0; i < 10; i++) {
-                // Get the last <li> element ("Milk") of <ul> with id="myList2"
-       var itm = document.getElementById("qwer");
-      mx[i] = Math.floor(Math.random() * 15)
-      my[i] = Math.floor(Math.random() * 15)
-      mx[i] *= 10
-      my[i] *= 10
-       var cln = itm.cloneNode(true);
-      var ci = document.getElementsByName("mob")[i];
-      ci.setAttribute("x",mx[i]);
-      ci.setAttribute("y",my[i]);
-      ci.appendChild("cln")
-      mhp[i] = 100
-       
-      
+        if(x == mx[i] && y == my[i]) {
+
+          if(ei == 9){
+            mhp[i] -= 50;
+            if (mhp[i] <= 0) {
+
+              mx[i] = -10
+              my[i] = -10
+              document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
+              document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+              score += 5
+              document.getElementById("scoree").innerHTML = score;
+              mc -= 1
+              if (mc == 0) {
+                for (var i = 0; i < 10; i++) {
+                  // Get the last <li> element ("Milk") of <ul> with id="myList2"
+
+        mx[i] = Math.floor(Math.random() * 15)
+        my[i] = Math.floor(Math.random() * 15)
+        mx[i] *= 10
+        my[i] *= 10
+
+        var ci = document.getElementsByName("mob")[i];
+        ci.setAttribute("x",mx[i]);
+        ci.setAttribute("y",my[i]);
+
+        mhp[i] = 100
+
+    }
               }
-            }
 
+
+    }
           }
-          }
+        }
       }
   }
 }
@@ -511,6 +523,20 @@ function ac() {
           document.getElementsByName("aee")[f].innerHTML = "";
           document.getElementsByName("aee")[f].appendChild(clo);
         }
+        if (ei == 8) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[7];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 9) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[7];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
         if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
           var temp = document.getElementsByTagName("template")[0];
           var clon = temp.content.cloneNode(true);
@@ -536,9 +562,21 @@ function ac() {
           var clon = temp.content.cloneNode(true);
           document.getElementById("a").appendChild(clon);
         }
-        if (slot[1] == 0 && slot[2] == 6 && slot[3] == 0 && slot[4] == 0 && slot[5] == 6 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
+        if (slot[1] == 0 && slot[2] == 6 && slot[3] == 0 && slot[4] == 0 && slot[5] == 6 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
 
           var temp = document.getElementsByTagName("template")[6];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+        if (slot[1] ==6 && slot[2] == 6 && slot[3] == 6 && slot[4] == 6 && slot[5] == 6 && slot[6] == 6 && slot[7] == 7 && slot[8] == 0 && slot[9] == 7) {
+
+          var temp = document.getElementsByTagName("template")[7];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+        if (slot[1] == 0 && slot[2] == 8 && slot[3] == 0 && slot[4] == 0 && slot[5] == 8 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
+
+          var temp = document.getElementsByTagName("template")[8];
           var clon = temp.content.cloneNode(true);
           document.getElementById("a").appendChild(clon);
         }
@@ -719,8 +757,8 @@ ae = 10;
 }
     }
 
-  }else if (slot[1] == 0 && slot[2] == 6 && slot[3] == 0 && slot[4] == 0 && slot[5] == 6 && slot[6] == 0 && slot[7] == 0 && slot[8] == 2 && slot[9] == 0) {
-    score += 1
+  }else if (slot[1] == 0 && slot[2] == 6 && slot[3] == 0 && slot[4] == 0 && slot[5] == 6 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
+    score += 10
     document.getElementById("scoree").innerHTML = score;
 document.getElementById("a").innerHTML = "";
 slot[1] = 0;
@@ -738,11 +776,9 @@ document.getElementsByName("aee")[afa].innerHTML = "";
 
 }
 for(var ae = 0; ae <= 6; ae++){
-  document.getElementsByName("ae")[ae].innerHTML = "";
-  inv[ae] = 0;
-if (is[ae] == 0) {
+  if (is[ae] == 0) {
 
-  var temp = document.getElementsByTagName("template")[6];
+    var temp = document.getElementsByTagName("template")[6];
 var clon = temp.content.cloneNode(true);
 document.getElementsByName("ae")[ae].appendChild(clon);
 var e = ae + 1
@@ -754,9 +790,75 @@ is[ae] = 7;
 ae = 10;
 }
 }
+}else if (slot[1] == 0 && slot[2] == 8 && slot[3] == 0 && slot[4] == 0 && slot[5] == 8 && slot[6] == 0 && slot[7] == 0 && slot[8] == 7 && slot[9] == 0) {
+  score += 10
+  document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
 
 }
+for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[8];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 9;
+
+ae = 10;
 }
+}
+}else if (slot[1] ==6 && slot[2] == 6 && slot[3] == 6 && slot[4] == 6 && slot[5] == 6 && slot[6] == 6 && slot[7] == 7 && slot[8] == 0 && slot[9] == 7) {
+  score += 10
+  document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+
+}
+for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[7];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 8;
+
+ae = 10;
+}
+}
+}
+}
+
 
 
 
