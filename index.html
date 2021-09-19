@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>hello</title>
     <style>
+    #dead {
+      display: none;
+    }
       td {
         border: 1px solid black;
         width: 50px;
@@ -11,7 +14,7 @@
       }
       #gf {
         background-color: blue;
-        width: 90px
+        width: 90px;
         height: 90px;
       }
       #block {
@@ -30,7 +33,7 @@
 
 }
 #plp {
-  z-index: 3;
+  z-index: 2;
 }
 #login {
   /* display: none; */
@@ -53,7 +56,8 @@
     </div>
     <div id="gff">
 <p>score:<span id="scoree">0</span></p>
-<button onclick="ss()">share yore score</button>
+<button onclick="ss()">share yore score</button><br>
+<div id="gs" >
     <table>
       <tr>
         <td class="c"></td>
@@ -164,14 +168,14 @@
       <tr>
         <th height="50"></th>
       </tr>
-<svg id="gf" width="150px" height="150px">
+<svg id="gf" width="300px" height="300px">
 <g id="ga">
 <g name="block">
  <rect name="block" x="0" y="0" width="10px" height="10px" id="block" fill="brown">
 </g>
 </g>
 <g >
- <rect name="mob" x="10" y="0" width="10px" height="10px" id="block" fill="red">
+ <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="red">
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
 <rect  id="pl" x="0" y="0" width="10px" height="10px" fill="blue" />
@@ -197,13 +201,44 @@
       </tr>
     </table>
 
-
-  score chat
+</div>
+  score chat<button>clear chat</button>
   <div id=box></div>
+</div>
+<div id="dead">
+ <p>you died refresh page</p>
+ <!-- <button onclick="rest">revive 0 score</button> -->
 </div>
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
 <script>
 
+function rest() {
+ slot = [0,0,0,0,0,0,0,0,0,0];
+ aa = [0,0];
+ is = [0,0,0,0,0,0,1]
+ mhp = [100,100,100,100,100,100,100,100,100,100,100]
+ ei = 1;
+itm = null
+
+
+ x = 0
+
+
+ y = 0
+  bx = 10
+   by = 0;
+    cx = 1
+     cy = 0
+
+ mx = [0,0,0,0,0,0,0,0,0,0,0]
+my = [0,0,0,0,0,0,0,0,0,0,0]
+cln
+   score = 0;
+  mc = 10;
+  hp = 100;
+
+}
+var hp = 100;
         var password
         var userName2
 
@@ -218,11 +253,12 @@
                     input = $('scoree'),
                     channel = 'blockservivel',
                     res = $("res");
+                    box.innerHTML = localStorage.chat
                 pubnub.addListener({
                     message: function(obj) {
 
                         box.innerHTML = ('' + obj.message).replace(/[<>]/g, '') + '<br>' + box.innerHTML
-
+                        localStorage.chat +=   box.innerHTML
 
                     }
                 });
@@ -235,7 +271,7 @@
                 function ss() {
                   pubnub.publish({
                       channel: channel,
-                      message: userName2 + ":" + input.innerHTML
+                      message: userName2 + ":i have " + input.innerHTML
 
                   });
                 }
@@ -262,6 +298,30 @@ alert("try agen")
       }else if (name == userName2 && name2 == password) {
         document.getElementById("gff").style.display = "block";
         document.getElementById("login").style.display = "none";
+        setInterval(function() {
+          for (var i = 0; i < mx.length; i++) {
+
+           if (mx[i] > x) {
+             mx[i] -= 10
+             document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+           }
+           if (mx[i] < x) {
+             mx[i] += 10
+             document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+           }
+
+          }
+          for (var i = 0; i < mhp.length; i++) {
+           if (my[i] > y) {
+             my[i] -= 10
+          document.getElementsByName("mob")[i].setAttribute("y",my[i])
+           }
+           if (my[i] < y) {
+             my[i] += 10
+             document.getElementsByName("mob")[i].setAttribute("y",my[i])
+           }
+          }
+        },3000)
       }
   }else if (document.getElementById('isl').value == 0)
 
@@ -273,15 +333,15 @@ alert("try agen")
       const slot = [0,0,0,0,0,0,0,0,0,0];
       const aa = [0,0];
       const is = [0,0,0,0,0,0,1]
-      const mhp = [100,100,100,100,100,100,100,100,100,100,100]
+      const mhp = [100,100,100,100,100,100,100,100,100,100,100];
       var ei = 1;
       var itm
       var x = 0
       var y = 0
-var bx = 10
+var bx = 10;
 var by = 0;
-var cx = 1
-var cy = 0
+var cx = 1;
+var cy = 0;
 const mx = [0,0,0,0,0,0,0,0,0,0,0]
 const my = [0,0,0,0,0,0,0,0,0,0,0]
       var cln
@@ -311,7 +371,7 @@ bx += 10;
 
         for (var i = 0; i < 10; i++) {
           // Get the last <li> element ("Milk") of <ul> with id="myList2"
- var itm = document.getElementsByName("mob")[0];
+var itm = document.getElementsByName("mob")[0];
 mx[i] = Math.floor(Math.random() * 15)
 my[i] = Math.floor(Math.random() * 15)
 mx[i] *= 10
@@ -338,7 +398,7 @@ cx -= 1
 
 }
 function right(px) {
-  if(x != 140) {
+  if(x != 90) {
      cx += 1
   x+=10
   // var s = document.getElementById("pl");
@@ -355,7 +415,7 @@ function up(px) {
 }
 }
 function down(px) {
-    if(y != 140) {
+    if(y != 90) {
       cx += 30
 
   y += 10
@@ -385,11 +445,11 @@ function ac() {
     my[i] = Math.floor(Math.random() * 15)
     mx[i] *= 10
     my[i] *= 10
-mc = 10
+
     var ci = document.getElementsByName("mob")[i];
     ci.setAttribute("x",mx[i]);
     ci.setAttribute("y",my[i]);
-
+mc += 10
     mhp[i] = 100
 
 }
@@ -416,11 +476,11 @@ mc = 10
     my[i] = Math.floor(Math.random() * 15)
     mx[i] *= 10
     my[i] *= 10
-mc = 10
+
     var ci = document.getElementsByName("mob")[i];
     ci.setAttribute("x",mx[i]);
     ci.setAttribute("y",my[i]);
-
+mc += 10
     mhp[i] = 100
 
 }
@@ -438,18 +498,18 @@ mc = 10
               my[i] = -10
               document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
               document.getElementsByName("mob")[i].setAttribute("y",my[i]);
-              score += 5
+              score += 2
               document.getElementById("scoree").innerHTML = score;
               mc -= 1
               if (mc == 0) {
                 for (var i = 0; i < 10; i++) {
                   // Get the last <li> element ("Milk") of <ul> with id="myList2"
-
+ mc += 10
         mx[i] = Math.floor(Math.random() * 15)
         my[i] = Math.floor(Math.random() * 15)
         mx[i] *= 10
         my[i] *= 10
-mc = 10
+
         var ci = document.getElementsByName("mob")[i];
         ci.setAttribute("x",mx[i]);
         ci.setAttribute("y",my[i]);
@@ -879,8 +939,17 @@ for(var afa = 0;afa < 9; afa++) {
 document.getElementsByName("aee")[afa].innerHTML = "";
 }
 }
-
-
+setInterval(function() {
+  for (var i = 0; i < mx.length; i++) {
+    if(mx[i] == x  && my[i] == y) {
+      hp -= 10
+      if (hp == 0) {
+        document.getElementById("gs").style.display = "none";
+        document.getElementById("dead").style.display = "block";
+      }
+    }
+  }
+},30000)
     </script>
   </body>
 </html>
