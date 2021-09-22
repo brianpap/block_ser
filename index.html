@@ -418,11 +418,12 @@ cln.setAttribute("y",my[i]);
 
         }
 
-
+var bo = 0
 function left(px) {
   if(x != 0) {
   x-=10;
 cx -= 1
+bo-= 1
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
@@ -433,6 +434,7 @@ cx -= 1
 function right(px) {
   if(x != 140) {
      cx += 1
+bo+= 1
   x+=10
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
@@ -444,13 +446,14 @@ function up(px) {
   if(y != 0) {
     cx -= 30
   y -= 10
+bo-=14
   document.getElementById("pl").setAttribute("y",y);
 }
 }
 function down(px) {
     if(y != 140) {
       cx += 30
-
+bo+= 14
   y += 10
   document.getElementById("pl").setAttribute("y",y);
 }
@@ -556,40 +559,42 @@ mc += 10
     }
           }
         }
-      }
-//       }else{
-//     mhp[i] -= 10;
-//     if (mhp[i] <= 0) {
-//
-//       mx[i] = -10
-//       my[i] = -10
-//       document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
-//       document.getElementsByName("mob")[i].setAttribute("y",my[i]);
-//       score += 2
-//       document.getElementById("scoree").innerHTML = score;
-//       mc -= 1
-//       if (mc == 0) {
-//         for (var i = 0; i < 10; i++) {
-//           // Get the last <li> element ("Milk") of <ul> with id="myList2"
-// mc += 10
-// mx[i] = Math.floor(Math.random() * 15)
-// my[i] = Math.floor(Math.random() * 15)
-// mx[i] *= 10
-// my[i] *= 10
-//
-// var ci = document.getElementsByName("mob")[i];
-// ci.setAttribute("x",mx[i]);
-// ci.setAttribute("y",my[i]);
-//
-// mhp[i] = 100
-//
-// }
-//       }
-//
-//
-// }
-//   }
-// }
+      
+      }else{
+    mhp[i] -= 10;
+     if (mhp[i] <= 0) {
+
+      mx[i] = -10
+      my[i] = -10
+     document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
+     document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+      score += 1
+     document.getElementById("scoree").innerHTML = score;
+      mc -= 1
+      if (mc == 0) {
+        for (var i = 0; i < 10; i++) {
+           // Get the last <li> element ("Milk") of <ul> with id="myList2"
+ mc += 10
+ mx[i] = Math.floor(Math.random() * 15)
+ my[i] = Math.floor(Math.random() * 15)
+ mx[i] *= 10
+ my[i] *= 10
+
+var ci = document.getElementsByName("mob")[i];
+ ci.setAttribute("x",mx[i]);
+ ci.setAttribute("y",my[i]);
+
+ mhp[i] = 100
+ }
+     }
+
+
+ }
+  }
+ }
+if(ei == 9) {
+document.getEllimentByName("block")[bo].style.fill = orange;
+}
 }
 
 
