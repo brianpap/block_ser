@@ -8,7 +8,7 @@
       display: none;
     }
       td {
-        border: 2px solid black;
+        border: 1px solid black;
         width: 50px;
         height: 50px;
       }
@@ -177,7 +177,7 @@ height: 140px;
 <svg id="gf" width="300px" height="300px">
 <g id="ga">
 <g name="block">
- <rect name="block" x="0" y="0" width="10px" height="10px" id="block" fill="brown">
+ <rect name="blocka" x="0" y="0" width="10px" height="10px" id="block" fill="brown">
 </g>
 </g>
 <g >
@@ -358,7 +358,7 @@ const slo = [0,0,0,0,0,0,0,0,0,0];
       var y = 0
 var bx = 10;
 var by = 0;
-var cx = 1;
+var cx = 0;
 var cy = 0;
 const mx = [0,0,0,0,0,0,0,0,0,0,0]
 const my = [0,0,0,0,0,0,0,0,0,0,0]
@@ -418,12 +418,11 @@ cln.setAttribute("y",my[i]);
 
         }
 
-var bo = 0
+
 function left(px) {
   if(x != 0) {
   x-=10;
 cx -= 1
-bo-= 1
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
@@ -434,7 +433,6 @@ bo-= 1
 function right(px) {
   if(x != 140) {
      cx += 1
-bo+= 1
   x+=10
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
@@ -444,16 +442,15 @@ bo+= 1
 }
 function up(px) {
   if(y != 0) {
-    cx -= 30
+    cx -= 14
   y -= 10
-bo-=14
   document.getElementById("pl").setAttribute("y",y);
 }
 }
 function down(px) {
     if(y != 140) {
-      cx += 30
-bo+= 14
+      cx += 14
+
   y += 10
   document.getElementById("pl").setAttribute("y",y);
 }
@@ -559,41 +556,42 @@ mc += 10
     }
           }
         }
-      
+
       }else{
     mhp[i] -= 10;
-     if (mhp[i] <= 0) {
+    if (mhp[i] <= 0) {
 
       mx[i] = -10
       my[i] = -10
-     document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
-     document.getElementsByName("mob")[i].setAttribute("y",my[i]);
-      score += 1
-     document.getElementById("scoree").innerHTML = score;
+      document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
+      document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+      score += 2
+      document.getElementById("scoree").innerHTML = score;
       mc -= 1
       if (mc == 0) {
         for (var i = 0; i < 10; i++) {
-           // Get the last <li> element ("Milk") of <ul> with id="myList2"
- mc += 10
- mx[i] = Math.floor(Math.random() * 15)
- my[i] = Math.floor(Math.random() * 15)
- mx[i] *= 10
- my[i] *= 10
+          // Get the last <li> element ("Milk") of <ul> with id="myList2"
+mc += 10
+mx[i] = Math.floor(Math.random() * 15)
+my[i] = Math.floor(Math.random() * 15)
+mx[i] *= 10
+my[i] *= 10
 
 var ci = document.getElementsByName("mob")[i];
- ci.setAttribute("x",mx[i]);
- ci.setAttribute("y",my[i]);
+ci.setAttribute("x",mx[i]);
+ci.setAttribute("y",my[i]);
 
- mhp[i] = 100
- }
-     }
+mhp[i] = 100
+
+}
+      }
 
 
- }
+}
   }
- }
-if(ei == 10) {
-document.getEllimentByName("block")[bo].style.fill = blue;
+}
+if (ei == 10) {
+  document.getElementsByName("blocka")[cx].style.fill = "orange";
 }
 }
 
@@ -664,7 +662,7 @@ document.getEllimentByName("block")[bo].style.fill = blue;
         }
         if (ei == 9) {
           var f = a - 1
-          var tem = document.getElementsByTagName("template")[7];
+          var tem = document.getElementsByTagName("template")[8];
           var clo = tem.content.cloneNode(true);
           document.getElementsByName("aee")[f].innerHTML = "";
           document.getElementsByName("aee")[f].appendChild(clo);
