@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>block servivel</title>
     <style>
+     body {
+       background-color: blue
+     }
     #dead {
       display: none;
     }
@@ -176,6 +179,13 @@ height: 140px;
       </tr>
 <svg id="gf" width="300px" height="300px">
 <g id="ga">
+  <g name="block2">
+   <rect name="blocka2" x="0" y="0" width="10px" height="10px" id="block" fill="white">
+  </g>
+<!-- <g name="block"> -->
+  <g name="block">
+   <rect name="blocka1" x="0" y="0" width="10px" height="10px" id="block" fill="white">
+  </g>
 <g name="block">
  <rect name="blocka" x="0" y="0" width="10px" height="10px" id="block" fill="brown">
 </g>
@@ -184,7 +194,7 @@ height: 140px;
  <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="red">
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
-<rect  id="pl" x="0" y="0" width="10px" height="10px" fill="blue" />
+<rect  id="pl" x="0" y="0" width="10px" height="10px" fill="cyan" />
 <!-- <polygon id="pl" x="0" y="0" points="4,10 1,6 3,6 3,2 5,0 7,2 7,6 6,6 6,10 4,10" fill="red" stroke="black" /> -->
 
 </svg>
@@ -289,6 +299,9 @@ var hp = 100;
 
 
 
+
+
+
             var name
             var password
             var userName2
@@ -365,7 +378,7 @@ const my = [0,0,0,0,0,0,0,0,0,0,0]
       var cln
       var score = 0;
       var mc = 10;
-
+var op1;
       function clc() {
         slot[1] = 0;
         slot[2] = 0;
@@ -382,26 +395,53 @@ const my = [0,0,0,0,0,0,0,0,0,0,0]
 
         }
       }
+
+
+
+//         for (var i = 0; i < 450; i++) {
+//           // Get the last <li> element ("Milk") of <ul> with id="myList2"
+//  var itm = document.getElementsByTagName("g")[3];
+//
+//
+//  var cln = itm.cloneNode(true);
+// var ci = cln.lastChild;
+// ci.setAttribute("x",bx);
+// ci.setAttribute("y",by);
+// bx += 10;
+//  document.getElementById("ga").appendChild(cln);
+//  if(bx == 140) {
+//    bx = 0;
+//    by += 10
+//  }
+//  if(by == 140) {
+//    i = 1000;
+//  }
+//         }
         for (var i = 0; i < 450; i++) {
+          for (var i = 0; i < 2; i++) {
+            // document.getElementsByName("bock")[i];
+
           // Get the last <li> element ("Milk") of <ul> with id="myList2"
- var itm = document.getElementsByTagName("g")[1];
+        var itm = document.getElementsByName("block")[i];
 
 
- var cln = itm.cloneNode(true);
-var ci = cln.lastChild;
-ci.setAttribute("x",bx);
-ci.setAttribute("y",by);
-bx += 10;
- document.getElementById("ga").appendChild(cln);
- if(bx == 140) {
-   bx = 0;
-   by += 10
- }
- if(by == 140) {
-   i = 1000;
- }
+        var cln = itm.cloneNode(true);
+        var ci = cln.lastChild
+        ci.setAttribute("x",bx);
+        ci.setAttribute("y",by);
+      }
+        bx += 10;
+        document.getElementById("ga").appendChild(cln);
+        if(bx == 140) {
+        bx = 0;
+        by += 10
         }
-
+        if(by == 140) {
+        i = 1000;
+        }
+        }
+        by = 0
+        bx = 10
         for (var i = 0; i < 10; i++) {
           // Get the last <li> element ("Milk") of <ul> with id="myList2"
 var itm = document.getElementsByName("mob")[0];
@@ -427,17 +467,31 @@ cx -= 1
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
   document.getElementById("pl").setAttribute("x",x)
+  if(cx == op1) {
+    for (var i = 0; i < 1000; i++) {
+
+
+    document.getElementsByName("blocka")[i].style.display = "none";
+  }
+  }
 }
 
 }
 function right(px) {
-  if(x != 140) {
+  if(x != 130) {
      cx += 1
   x+=10
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
   document.getElementById("pl").setAttribute("x",x)
+  if(cx == op1) {
+    for (var i = 0; i < 1000; i++) {
+
+
+    document.getElementsByName("blocka")[i].style.display = "none";
+  }
+  }
 }
 }
 function up(px) {
@@ -445,14 +499,28 @@ function up(px) {
     cx -= 14
   y -= 10
   document.getElementById("pl").setAttribute("y",y);
+  if(cx == op1) {
+    for (var i = 0; i < 1000; i++) {
+
+
+    document.getElementsByName("blocka")[i].style.display = "none";
+  }
+  }
 }
 }
 function down(px) {
-    if(y != 140) {
+    if(y != 130) {
       cx += 14
 
   y += 10
   document.getElementById("pl").setAttribute("y",y);
+  if(cx == op1) {
+    for (var i = 0; i < 1000; i++) {
+
+
+    document.getElementsByName("blocka")[i].style.display = "none";
+  }
+  }
 }
 }
 function ac() {
@@ -592,6 +660,7 @@ mhp[i] = 100
 }
 if (ei == 10) {
   document.getElementsByName("blocka")[cx].style.fill = "orange";
+  op1 = cx
 }
 }
 
