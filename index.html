@@ -387,8 +387,8 @@ alert("try agen")
           for (var i = 0; i < mx.length; i++) {
             if(mx[i] == x  && my[i] == y) {
             document.getElementById("monster").style.display = "block";
-            document.getElementById("mhpo").innerHTML = mhp[i];
-            document.getElementById("matc").innerHTML = "10";
+            document.getElementById("mhpo").innerHTML = "monster hp:" + mhp[i];
+            document.getElementById("matc").innerHTML = "monster atc:10";
           }else{
             document.getElementById("monster").style.display = "none";
           }
