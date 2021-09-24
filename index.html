@@ -11,7 +11,7 @@
       display: none;
     }
       td {
-        border: 2px solid black;
+        border: 1px solid black;
         width: 50px;
         height: 50px;
       }
@@ -46,6 +46,9 @@ height: 140px;
 }
 #gff {
   display: none;
+}
+#tradee {
+  display: none
 }
     </style>
   </head>
@@ -152,6 +155,12 @@ height: 140px;
 
       </svg>
     </template>
+    <template>
+      <svg width="50" height="50" viewbox="0 0 100 100">
+        <rect x="0" y="0" width="100" height="100" fill="pink" />
+
+      </svg>
+    </template>
     <table>
       <tr>
         <td onclick="ad(1)" name="aee"></td>
@@ -179,19 +188,19 @@ height: 140px;
       </tr>
 <svg id="gf" width="300px" height="300px">
 <g id="ga">
-  <g name="block2">
-   <rect name="blocka2" x="0" y="0" width="10px" height="10px" id="block" fill="white">
+  <g name="block">
+   <rect name="blocka3" x="0" y="0" width="10px" height="10px" id="block3" fill="red">
   </g>
 <!-- <g name="block"> -->
   <g name="block">
-   <rect name="blocka1" x="0" y="0" width="10px" height="10px" id="block" fill="white">
+   <rect name="blocka2" x="0" y="0" width="10px" height="10px" id="block2" fill="white">
   </g>
 <g name="block">
- <rect name="blocka" x="0" y="0" width="10px" height="10px" id="block" fill="brown">
+ <rect name="blocka1" x="0" y="0" width="10px" height="10px" id="block1" fill="brown">
 </g>
 </g>
 <g >
- <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="red">
+ <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="pink">
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
 <rect  id="pl" x="0" y="0" width="10px" height="10px" fill="cyan" />
@@ -225,9 +234,18 @@ height: 140px;
  <p>you died refresh page</p>
  <!-- <button onclick="rest">revive 0 score</button> -->
 </div>
+<div id="tradee" >
+  do you want to trad
+  <button onclick="trade("st")">2score for a stick</button>
+  <button onclick="trade("an")">5score for a angel block</button>
+  <button onclick="trade("db")">50score for a devil block</button>
+  <button onclick="trade("ds")">100score for a devil stick</button>
+  <button onclick="trade("dt")">1000score for a devil table</button>
+  <button onclick="trade("dss")">10000score for a devil sorde</button>
+</div>
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
 <script>
-
+var lar = 1;
 function rest() {
  slot = [0,0,0,0,0,0,0,0,0,0];
  aa = [0,0];
@@ -360,6 +378,7 @@ alert("try agen")
     localStorage.password2 = document.getElementsByTagName("input")[2].value
 
   }
+  var lar
 const slo = [0,0,0,0,0,0,0,0,0,0];
       const slot = [0,0,0,0,0,0,0,0,0,0];
       const aa = [0,0];
@@ -418,7 +437,7 @@ var op1;
 //  }
 //         }
         for (var i = 0; i < 450; i++) {
-          for (var i = 0; i < 2; i++) {
+          // for (var i = 0; i < 2; i++) {
             // document.getElementsByName("bock")[i];
 
           // Get the last <li> element ("Milk") of <ul> with id="myList2"
@@ -429,7 +448,7 @@ var op1;
         var ci = cln.lastChild
         ci.setAttribute("x",bx);
         ci.setAttribute("y",by);
-      }
+      // }
         bx += 10;
         document.getElementById("ga").appendChild(cln);
         if(bx == 140) {
@@ -467,13 +486,13 @@ cx -= 1
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
   document.getElementById("pl").setAttribute("x",x)
-  if(cx == op1) {
-    for (var i = 0; i < 1000; i++) {
-
-
-    document.getElementsByName("blocka")[i].style.display = "none";
-  }
-  }
+  // if(cx == op1) {
+  //   for (var i = 0; i < 1000; i++) {
+  //
+  //
+  //   document.getElementsByName("blocka1")[i].style.display = "none";
+  // }
+  // }
 }
 
 }
@@ -485,13 +504,13 @@ function right(px) {
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
   document.getElementById("pl").setAttribute("x",x)
-  if(cx == op1) {
-    for (var i = 0; i < 1000; i++) {
-
-
-    document.getElementsByName("blocka")[i].style.display = "none";
-  }
-  }
+//   if(cx == op1) {
+//     for (var i = 0; i < 1000; i++) {
+//
+//
+//     document.getElementsByName("blocka1")[i].style.display = "none";
+//   }
+//   }
 }
 }
 function up(px) {
@@ -499,13 +518,13 @@ function up(px) {
     cx -= 14
   y -= 10
   document.getElementById("pl").setAttribute("y",y);
-  if(cx == op1) {
-    for (var i = 0; i < 1000; i++) {
-
-
-    document.getElementsByName("blocka")[i].style.display = "none";
-  }
-  }
+  // if(cx == op1) {
+//     for (var i = 0; i < 1000; i++) {
+//
+//
+//     document.getElementsByName("blocka1")[i].style.display = "none";
+//   }
+//   }
 }
 }
 function down(px) {
@@ -514,15 +533,16 @@ function down(px) {
 
   y += 10
   document.getElementById("pl").setAttribute("y",y);
-  if(cx == op1) {
-    for (var i = 0; i < 1000; i++) {
-
-
-    document.getElementsByName("blocka")[i].style.display = "none";
-  }
-  }
+  // if(cx == op1) {
+  //   for (var i = 0; i < 1000; i++) {
+  //
+  //
+  //   document.getElementsByName("blocka1")[i].style.display = "none";
+  // }
+  // }
 }
 }
+
 function ac() {
   for (var i = 0; i < mhp.length; i++) {
     if(x == mx[i] && y == my[i]) {
@@ -622,10 +642,9 @@ mc += 10
 
 
     }
-          }
-        }
-
-      }else{
+  }
+}
+          }else{
     mhp[i] -= 10;
     if (mhp[i] <= 0) {
 
@@ -658,9 +677,20 @@ mhp[i] = 100
 }
   }
 }
+
 if (ei == 10) {
-  document.getElementsByName("blocka")[cx].style.fill = "orange";
-  op1 = cx
+  for(i = 0;i < 10000; i++)
+  lar = 2;
+document.getElementsByName("blocka1")[i].style.display = "none";
+lar = 2;
+
+}
+if(x == 0 && y == 0) {
+  if (lar <= 2) {
+
+
+document.getElementById("tradee").style.disable = "block"
+}
 }
 }
 
@@ -1090,6 +1120,39 @@ var e = ae + 1
 
 
 is[ae] = 10;
+
+ae = 10;
+}
+}
+}else if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 4 && slot[5] == 6 && slot[6] == 4 && slot[7] == 0 && slot[8] == 4 && slot[9] == 0) {
+  score += 10
+  document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+
+}
+for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[10];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 11;
 
 ae = 10;
 }
