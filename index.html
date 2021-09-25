@@ -11,7 +11,7 @@
       display: none;
     }
       td {
-        border: 2px solid black;
+        border: 1px solid black;
         width: 50px;
         height: 50px;
       }
@@ -648,15 +648,57 @@ a {
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
 <script>
 var ro = 1
+var matcc
 function shower() {
   if(ro == 1){
     document.getElementById("cr").style.display='block';
     document.getElementById("gff").style.display='none';
     ro = 2;
+    clearInterval(matcc)
+    clearInterval(mmcc)
   }else if(ro == 2){
     document.getElementById("cr").style.display='none';
     document.getElementById("gff").style.display='block';
     ro = 1;
+    mmcc = setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+
+       if (mx[i] > x) {
+         mx[i] -= 10
+         document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+       }
+       if (mx[i] < x) {
+         mx[i] += 10
+         document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+       }
+
+      }
+      for (var i = 0; i < mhp.length; i++) {
+       if (my[i] > y) {
+         my[i] -= 10
+      document.getElementsByName("mob")[i].setAttribute("y",my[i])
+       }
+       if (my[i] < y) {
+         my[i] += 10
+         document.getElementsByName("mob")[i].setAttribute("y",my[i])
+       }
+      }
+    },3000)
+    matcc = setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+        if(mx[i] == x  && my[i] == y) {
+          hp -= 10
+          if (ei==12){
+            hp += 3;
+          }
+          if (hp <= 0) {
+            document.getElementById("gs").style.display = "none";
+            document.getElementById("cr").style.display = "none";
+            document.getElementById("dead").style.display = "block";
+          }
+        }
+      }
+    },30000)
   }
 }
 var lar = 1;
@@ -750,7 +792,7 @@ alert("try agen")
       }else if (name == userName2 && name2 == password) {
         document.getElementById("gff").style.display = "block";
         document.getElementById("login").style.display = "none";
-        setInterval(function() {
+        mmcc = setInterval(function() {
           for (var i = 0; i < mx.length; i++) {
 
            if (mx[i] > x) {
@@ -774,7 +816,7 @@ alert("try agen")
            }
           }
         },3000)
-        setInterval(function() {
+        matcc = setInterval(function() {
           for (var i = 0; i < mx.length; i++) {
             if(mx[i] == x  && my[i] == y) {
               hp -= 10
@@ -789,7 +831,7 @@ alert("try agen")
             }
           }
         },30000)
-        setInterval(function() {
+       setInterval(function() {
           for (var i = 0; i < mx.length; i++) {
             if(mx[i] == x  && my[i] == y) {
             document.getElementById("monster").style.display = "block";
