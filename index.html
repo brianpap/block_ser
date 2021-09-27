@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -645,8 +646,11 @@ a {
     </tbody>
   </table>
 </div>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
 <script>
+var hi
 var ro = 1
 var matcc
 function shower() {
@@ -702,6 +706,7 @@ function shower() {
   }
 }
 var lar = 1;
+
 function rest() {
  slot = [0,0,0,0,0,0,0,0,0,0];
  aa = [0,0];
@@ -762,6 +767,7 @@ var hp = 100;
                 function ss() {
                   pubnub.publish({
                       channel: channel,
+
                       message: userName2 + ":i have " + input.innerHTML
 
                   });
@@ -1704,7 +1710,14 @@ setInterval(function(){
 },16000)
 
 
-
+setInterval(function(){
+  if (score > his) {
+    locationStorige.hi = score
+    hi = score
+  }else{
+    hi = locationStorige.hi
+  }
+},1)
     </script>
   </body>
 </html>
