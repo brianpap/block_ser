@@ -141,8 +141,8 @@ a {
     </template>
     <template>
 
-        <svg width="50" height="50" viewbox="0 0 100 100">
 
+      <svg width="50" height="50" viewbox="0 0 100 100">
           <polygon points="0,0 0,100 50,50 100,100 100,0 0,0" fill="red" stroke="black" />
 
         </svg>
@@ -174,6 +174,12 @@ a {
         <polygon points="50,0 100,20 100,100 0,100 0,20 50,0" fill="red" stroke="black" />
 
       </svg>
+    </template>
+    <template>
+    <svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="white"/></svg>
+    </template>
+    <template>
+<svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="pink"/></svg>
     </template>
     <br>
 
@@ -643,6 +649,76 @@ a {
       <tr>
         <th></th>
       </tr>
+      <tr>
+        <td></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <td></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <th>=</th>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="white"/></svg></td>
+      </tr>
+      <tr>
+        <td>
+          <svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+      </tr>
+      <tr>
+        <th></th>
+      </tr>
+      tr>
+        <td></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100">
+            <rect x="45" y="0" width="10" height="100" fill="brown" />
+          </svg></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <td></td>
+        <th>=</th>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="pink"/></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="white"/></svg></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+      </tr>
+      <!-- <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <th>=</th>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+      </tr> -->
     </tbody>
   </table>
 </div>
@@ -847,7 +923,7 @@ alert("try agen")
             document.getElementById("monster").style.display = "none";
           }
           }
-        },1)
+        },50)
       }
   }else if (document.getElementById('isl').value == 0)
 
@@ -1019,7 +1095,7 @@ function down(px) {
   // }
 }
 }
-
+var ab = 1;
 function ac() {
   for (var i = 0; i < mhp.length; i++) {
     if(x == mx[i] && y == my[i]) {
@@ -1177,6 +1253,19 @@ document.getElementsByName("blocka1")[i].style.display = "none";
 lar = 2;
 }
 }
+if (ei == 14) {
+for(var ae = 0; ae <= 6; ae++){
+  if(is[ae] == 13) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  ab = 2;
+  setTimeout(function() {
+    ab=1;
+  },5000)
+}
+}
+
 }
 
 
@@ -1320,14 +1409,23 @@ lar = 2;
           var clon = temp.content.cloneNode(true);
           document.getElementById("a").appendChild(clon);
         }
-        if (lot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 4 && slot[5] == 4 && slot[6] == 4 && slot[7] == 4 && slot[8] == 4 && slot[9] == 4) {
+        if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 4 && slot[5] == 4 && slot[6] == 4 && slot[7] == 4 && slot[8] == 4 && slot[9] == 4) {
 
           var temp = document.getElementsByTagName("template")[11];
           var clon = temp.content.cloneNode(true);
           document.getElementById("a").appendChild(clon);
+        }else if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 4 && slot[5] == 0 && slot[6] == 4 && slot[7] == 4 && slot[8] == 4 && slot[9] == 4) {
+
+          var temp = document.getElementsByTagName("template")[12];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }else if (slot[1] == 0 && slot[2] == 2 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 13 && slot[9] == 0) {
+
+          var temp = document.getElementsByTagName("template")[13];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
         }
       }
-
       function get() {
         if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
           score += 1
@@ -1701,6 +1799,72 @@ is[ae] = 12;
 ae = 10;
 }
 }
+}else if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 4 && slot[5] == 0 && slot[6] == 4 && slot[7] == 4 && slot[8] == 4 && slot[9] == 4) {
+  score += 10
+  document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+
+}
+for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[12];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 13;
+
+ae = 10;
+}
+}
+}else if (slot[1] == 0 && slot[2] == 2 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 13 && slot[9] == 0) {
+  score += 10
+  document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+
+}
+for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[12];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 14;
+
+ae = 10;
+}
+}
 }
 }
 
@@ -1710,14 +1874,14 @@ setInterval(function(){
 },16000)
 
 
-setInterval(function(){
-  if (score > his) {
-    locationStorige.hi = score
-    hi = score
-  }else{
-    hi = locationStorige.hi
-  }
-},1)
+// setInterval(function(){
+//   if (score > hi) {
+//     locationStorige.hi = score
+//     hi = score
+//   }else{
+//     hi = locationStorige.hi
+//   }
+// },50)
     </script>
   </body>
 </html>
