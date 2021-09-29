@@ -6,15 +6,16 @@
     <title>block servivel</title>
     <style>
      body {
-       background-color: blue
+       background-color: black
      }
     #dead {
       display: none;
     }
       td {
-        border: 2px solid black;
+        border: 2px solid white;
         width: 50px;
         height: 50px;
+color: white
       }
 
       #gf {
@@ -38,7 +39,7 @@ height: 140px;
 
 }
 #plp {
-  z-index: 3;
+  z-index: 2;
 }
 #login {
   /* display: none; */
@@ -57,6 +58,12 @@ a {
 }
 #cr {
   display: none;
+}
+p {
+  color: white
+}
+#box {
+  color: white;
 }
     </style>
   </head>
@@ -80,7 +87,7 @@ a {
       </tr>
       <tr>
         <td class="cc" onclick="left()">&#8592;</td>
-        <td class="cc" onclick="ac()"><svg width="30" height="30"><rect x="10" y="10" width="10" height="10" ry="5" /></svg></td>
+        <td class="cc" onclick="ac()"><svg width="30" height="30"><rect x="10" y="10" width="10" height="10" ry="5" fill=white /></svg></td>
         <td class="cc" onclick="right()">&#8594;</td>
 
       </tr>
@@ -180,6 +187,9 @@ a {
     </template>
     <template>
 <svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="pink"/></svg>
+    </template>
+    <template>
+<svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg>
     </template>
     <br>
 
@@ -699,6 +709,28 @@ a {
       <tr>
         <th></th>
       </tr>
+      <tr>
+        <td></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+      <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <td></td>
+        <th>=</th>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="white"/></svg></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+      </tr>
       <!-- <tr>
         <td></td>
         <td></td>
@@ -825,12 +857,12 @@ var hp = 100;
                     input = $('scoree'),
                     channel = 'blockservivel',
                     res = $("res");
-                    box.innerHTML = localStorage.chat
+
                 pubnub.addListener({
                     message: function(obj) {
 
                         box.innerHTML = ('' + obj.message).replace(/[<>]/g, '') + '<br>' + box.innerHTML
-                        localStorage.chat +=   box.innerHTML
+
 
                     }
                 });
@@ -932,6 +964,7 @@ alert("try agen")
 
   }
   var lar
+  var ss = 1;
 const slo = [0,0,0,0,0,0,0,0,0,0];
       const slot = [0,0,0,0,0,0,0,0,0,0];
       const aa = [0,0];
@@ -1035,6 +1068,9 @@ function left(px) {
   if(x != 0) {
   x-=10;
 cx -= 1
+if (ss == 2) {
+  x -= 10
+}
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
@@ -1052,6 +1088,9 @@ cx -= 1
 function right(px) {
   if(x != 130) {
      cx += 1
+     if (ss == 2) {
+       x += 10
+     }
   x+=10
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
@@ -1068,6 +1107,9 @@ function right(px) {
 }
 function up(px) {
   if(y != 0) {
+    if (ss == 2) {
+      y -= 10
+    }
     cx -= 14
   y -= 10
   document.getElementById("pl").setAttribute("y",y);
@@ -1080,10 +1122,12 @@ function up(px) {
 //   }
 }
 }
-function down(px) {
+function down(px){
     if(y != 130) {
       cx += 14
-
+if (ss == 2) {
+  y += 10
+}
   y += 10
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
@@ -1103,7 +1147,7 @@ function ac() {
       if(ei == 3){
         mhp[i] -= 20;
         if(ab == 2){
-mhp-=5
+          mhp[i] -= 10;
         }
         if (mhp[i] <= 0) {
 
@@ -1138,7 +1182,7 @@ mc += 10
       if(ei == 5){
         mhp[i] -= 35;
         if(ab == 2){
-mhp-=5
+          mhp[i] -= 10;
         }
         if (mhp[i] <= 0) {
           mx[i] = -10
@@ -1173,8 +1217,8 @@ mc += 10
           if(ei == 9){
             mhp[i] -= 50;
             if(ab == 2){
-mhp-=5
-        }
+              mhp[i] -= 10;
+            }
             if (mhp[i] <= 0) {
 
               mx[i] = -10
@@ -1208,9 +1252,9 @@ mhp-=5
 }
           }else{
     mhp[i] -= 10;
-            if(ab == 2){
-mhp-=5
-        }
+    if(ab == 2){
+      mhp[i] -= 10;
+    }
     if (mhp[i] <= 0) {
 
       mx[i] = -10
@@ -1266,6 +1310,7 @@ lar = 2;
 }
 }
 if (ei == 14) {
+
 for(var ae = 0; ae <= 6; ae++){
   if(is[ae] == 14) {
     document.getElementsByName("ae")[ae].innerHTML = "";
@@ -1274,7 +1319,20 @@ for(var ae = 0; ae <= 6; ae++){
   ab = 2;
   setTimeout(function() {
     ab=1;
-  },10000)
+  },20000)
+}
+}
+if (ei == 15) {
+
+for(var ae = 0; ae <= 6; ae++){
+  if(is[ae] == 15) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  ss = 2;
+  setTimeout(function() {
+    ss=1;
+  },20000)
 }
 }
 
@@ -1366,9 +1424,37 @@ for(var ae = 0; ae <= 6; ae++){
           document.getElementsByName("aee")[f].innerHTML = "";
           document.getElementsByName("aee")[f].appendChild(clo);
         }
+        if (ei == 12) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[11];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
         if (ei == 13) {
           var f = a - 1
           var tem = document.getElementsByTagName("template")[12];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 13) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[12];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 14) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[13];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
+        if (ei == 15) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[14];
           var clo = tem.content.cloneNode(true);
           document.getElementsByName("aee")[f].innerHTML = "";
           document.getElementsByName("aee")[f].appendChild(clo);
@@ -1488,6 +1574,8 @@ for(var afa = 0;afa < 9; afa++) {
             document.getElementsByName("ae")[ae].innerHTML = "";
             is[ae] = 0;
           }
+        }
+        for(var ae = 0; ae <= 6; ae++){
           if (is[ae] == 0) {
 
             var temp = document.getElementsByTagName("template")[1];
@@ -1562,6 +1650,8 @@ document.getElementsByName("aee")[afa].innerHTML = "";
          document.getElementsByName("ae")[ae].innerHTML = "";
          is[ae] = 0;
        }
+     }
+     for(var ae = 0; ae <= 6; ae++){
        if (is[ae] == 0) {
 
          var temp = document.getElementsByTagName("template")[4];
@@ -1604,7 +1694,8 @@ if (is[ae] == 4) {
   document.getElementsByName("ae")[ae].innerHTML = "";
   is[ae] = 0;
 }
-
+}
+for(var ae = 0; ae <= 6; ae++){
       if (is[ae] == 0) {
 
         var temp = document.getElementsByTagName("template")[5];
@@ -1639,6 +1730,12 @@ document.getElementsByName("aee")[afa].innerHTML = "";
 
 }
 for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 6) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+}
+for(var ae = 0; ae <= 6; ae++){
   if (is[ae] == 0) {
 
     var temp = document.getElementsByTagName("template")[6];
@@ -1670,6 +1767,16 @@ slot[9] = 0;
 for(var afa = 0;afa < 9; afa++) {
 document.getElementsByName("aee")[afa].innerHTML = "";
 
+}
+for(var ae = 0; ae <= 7; ae++){
+  if (is[ae] == 5) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  if (is[ae] == 8) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
 }
 for(var ae = 0; ae <= 6; ae++){
 if (is[ae] == 0) {
@@ -1705,6 +1812,16 @@ document.getElementsByName("aee")[afa].innerHTML = "";
 
 }
 for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 6) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  if (is[ae] == 7) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+}
+for(var ae = 0; ae <= 6; ae++){
 if (is[ae] == 0) {
 
   var temp = document.getElementsByTagName("template")[7];
@@ -1736,6 +1853,12 @@ slot[9] = 0;
 for(var afa = 0;afa < 9; afa++) {
 document.getElementsByName("aee")[afa].innerHTML = "";
 
+}
+for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 4) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
 }
 for(var ae = 0; ae <= 6; ae++){
 if (is[ae] == 0) {
@@ -1771,6 +1894,16 @@ document.getElementsByName("aee")[afa].innerHTML = "";
 
 }
 for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 4) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  if (is[ae] == 6) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+}
+for(var ae = 0; ae <= 6; ae++){
 if (is[ae] == 0) {
 
   var temp = document.getElementsByTagName("template")[10];
@@ -1802,6 +1935,12 @@ slot[9] = 0;
 for(var afa = 0;afa < 9; afa++) {
 document.getElementsByName("aee")[afa].innerHTML = "";
 
+}
+for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 4) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
 }
 for(var ae = 0; ae <= 6; ae++){
 if (is[ae] == 0) {
@@ -1837,6 +1976,12 @@ document.getElementsByName("aee")[afa].innerHTML = "";
 
 }
 for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 4) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+}
+for(var ae = 0; ae <= 6; ae++){
 if (is[ae] == 0) {
 
   var temp = document.getElementsByTagName("template")[12];
@@ -1870,6 +2015,22 @@ document.getElementsByName("aee")[afa].innerHTML = "";
 
 }
 for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 13) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  if (is[ae] == 4) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  if (is[ae] == 2) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+
+
+}
+for(var ae = 0; ae <= 6; ae++){
 if (is[ae] == 0) {
 
   var temp = document.getElementsByTagName("template")[13];
@@ -1884,6 +2045,49 @@ is[ae] = 14;
 ae = 10;
 }
 }
+}else if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 13 && slot[9] == 0) {
+  score += 10
+  document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+
+}
+for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 13) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  if (is[ae] == 4) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+}
+for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[14];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 15;
+
+ae = 10;
+}
+}
 }
 }
 
@@ -1893,14 +2097,15 @@ setInterval(function(){
 },16000)
 
 
-// setInterval(function(){
-//   if (score > hi) {
-//     locationStorige.hi = score
-//     hi = score
-//   }else{
-//     hi = locationStorige.hi
-//   }
-// },50)
+setInterval(function(){
+  if (score > hi) {
+    localStorage.hi = score
+    hi = score
+  }else{
+    hi = localStorage.hi
+  }
+  localStorage.chat = null;
+},50)
     </script>
   </body>
 </html>
