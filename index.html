@@ -964,7 +964,7 @@ alert("try agen")
 
   }
   var lar
-  var ss = 1;
+  var as = 1;
 const slo = [0,0,0,0,0,0,0,0,0,0];
       const slot = [0,0,0,0,0,0,0,0,0,0];
       const aa = [0,0];
@@ -1068,8 +1068,10 @@ function left(px) {
   if(x != 0) {
   x-=10;
 cx -= 1
-if (ss == 2) {
+if (as == 2) {
+if(x !=0){
   x -= 10
+}
 }
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
@@ -1087,11 +1089,15 @@ if (ss == 2) {
 }
 function right(px) {
   if(x != 130) {
+x+=10
      cx += 1
      if (ss == 2) {
+       if(x != 130) {
        x += 10
+       }
      }
-  x+=10
+
+  
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
@@ -1107,11 +1113,14 @@ function right(px) {
 }
 function up(px) {
   if(y != 0) {
+y -= 10
     if (ss == 2) {
+      if(y != 0) {
       y -= 10
+      }
     }
     cx -= 14
-  y -= 10
+ 
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
 //     for (var i = 0; i < 1000; i++) {
@@ -1125,10 +1134,13 @@ function up(px) {
 function down(px){
     if(y != 130) {
       cx += 14
+y += 10
 if (ss == 2) {
+  if(y != 130) {
   y += 10
+  }
 }
-  y += 10
+  
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
   //   for (var i = 0; i < 1000; i++) {
