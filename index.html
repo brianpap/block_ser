@@ -1069,7 +1069,7 @@ function left(px) {
   x-=10;
 cx -= 1
 if (as == 2) {
-if(x !=0){
+if(x != 0){
   x -= 10
 }
 }
@@ -1091,7 +1091,7 @@ function right(px) {
   if(x != 130) {
 x+=10
      cx += 1
-     if (ss == 2) {
+     if (as == 2) {
        if(x != 130) {
        x += 10
        }
@@ -1114,7 +1114,7 @@ x+=10
 function up(px) {
   if(y != 0) {
 y -= 10
-    if (ss == 2) {
+    if (as == 2) {
       if(y != 0) {
       y -= 10
       }
@@ -1135,7 +1135,7 @@ function down(px){
     if(y != 130) {
       cx += 14
 y += 10
-if (ss == 2) {
+if (as == 2) {
   if(y != 130) {
   y += 10
   }
@@ -1331,7 +1331,7 @@ for(var ae = 0; ae <= 6; ae++){
   ab = 2;
   setTimeout(function() {
     ab=1;
-  },200000)
+  },20000)
 }
 }
 if (ei == 15) {
@@ -1341,10 +1341,10 @@ for(var ae = 0; ae <= 6; ae++){
     document.getElementsByName("ae")[ae].innerHTML = "";
     is[ae] = 0;
   }
-  ss = 2;
+  as = 2;
   setTimeout(function() {
     ss=1;
-  },200000)
+  },20000)
 }
 }
 
