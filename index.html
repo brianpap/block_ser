@@ -1402,6 +1402,18 @@ for(var ae = 0; ae <= 6; ae++){
     as=1;
   },20000)
 }
+if (ei == 16) {
+
+for(var ae = 0; ae <= 6; ae++){
+  if(is[ae] == 16) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  as = 2;
+  setTimeout(function() {
+    as=1;
+  },50000)
+}
 }
 
 }
@@ -1527,6 +1539,13 @@ for(var ae = 0; ae <= 6; ae++){
           document.getElementsByName("aee")[f].innerHTML = "";
           document.getElementsByName("aee")[f].appendChild(clo);
         }
+        if (ei == 16) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[15];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
         if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
           var temp = document.getElementsByTagName("template")[0];
           var clon = temp.content.cloneNode(true);
@@ -1600,6 +1619,12 @@ for(var ae = 0; ae <= 6; ae++){
         }else if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 13 && slot[9] == 0) {
 
           var temp = document.getElementsByTagName("template")[14];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }
+        else if (slot[1] == 0 && slot[2] == 0 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 15 && slot[9] == 0) {
+
+          var temp = document.getElementsByTagName("template")[15];
           var clon = temp.content.cloneNode(true);
           document.getElementById("a").appendChild(clon);
         }
