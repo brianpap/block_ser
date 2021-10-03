@@ -191,9 +191,10 @@ p {
     <template>
 <svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg>
     </template>
-  
-<svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg>
-    
+  <template>
+<svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="lightBlue" stroke="black" /></svg>
+</template>
+
     <br>
 
     <button onclick="shower()">resipes</button>
@@ -960,12 +961,64 @@ alert("try agen")
           }
         },50)
       }
-  }else if (document.getElementById('isl').value == 0)
+  }else if (document.getElementById('isl').value == 0){
 
     localStorage.userName3 = document.getElementsByTagName("input")[1].value
     localStorage.password2 = document.getElementsByTagName("input")[2].value
+    document.getElementById("gff").style.display = "block";
+    document.getElementById("login").style.display = "none";
+    mmcc = setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
 
+       if (mx[i] > x) {
+         mx[i] -= 10
+         document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+       }
+       if (mx[i] < x) {
+         mx[i] += 10
+         document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+       }
+
+      }
+      for (var i = 0; i < mhp.length; i++) {
+       if (my[i] > y) {
+         my[i] -= 10
+      document.getElementsByName("mob")[i].setAttribute("y",my[i])
+       }
+       if (my[i] < y) {
+         my[i] += 10
+         document.getElementsByName("mob")[i].setAttribute("y",my[i])
+       }
+      }
+    },3000)
+    matcc = setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+        if(mx[i] == x  && my[i] == y) {
+          hp -= 10
+          if (ei==12){
+            hp += 3;
+          }
+          if (hp <= 0) {
+            document.getElementById("gs").style.display = "none";
+            document.getElementById("cr").style.display = "none";
+            document.getElementById("dead").style.display = "block";
+          }
+        }
+      }
+    },30000)
+   setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+        if(mx[i] == x  && my[i] == y) {
+        document.getElementById("monster").style.display = "block";
+        document.getElementById("mhpo").innerHTML = "monster hp:" + mhp[i];
+        document.getElementById("matc").innerHTML = "monster atc:10";
+      }else{
+        document.getElementById("monster").style.display = "none";
+      }
+      }
+    },50)
   }
+}
   var lar
   var as = 1;
 const slo = [0,0,0,0,0,0,0,0,0,0];
@@ -1100,7 +1153,7 @@ x+=10
        }
      }
 
-  
+
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
@@ -1123,7 +1176,7 @@ y -= 10
       }
     }
     cx -= 14
- 
+
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
 //     for (var i = 0; i < 1000; i++) {
@@ -1143,7 +1196,7 @@ if (as == 2) {
   y += 10
   }
 }
-  
+
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
   //   for (var i = 0; i < 1000; i++) {
@@ -2099,6 +2152,49 @@ var e = ae + 1
 
 
 is[ae] = 15;
+
+ae = 10;
+}
+}
+}else if (slot[1] == 0 && slot[2] == 0 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 15 && slot[9] == 0) {
+  score += 10
+  document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+
+}
+for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 15) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  if (is[ae] == 4) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+}
+for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[15];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 16;
 
 ae = 10;
 }
