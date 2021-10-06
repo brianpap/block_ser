@@ -2,10 +2,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-
+    <meta charset="utf-8">
     <title>block servivel</title>
-    <link rel="icon" href="favicon.ico" sizes="16x16">
-   <link rel="apple-touch-icon-precomposed" href="favicon.ico">
     <style>
      body {
        background-color: black
@@ -41,7 +39,7 @@ height: 140px;
 
 }
 #plp {
-  z-index: 2;
+  z-index: 3;
 }
 #login {
   /* display: none; */
@@ -70,7 +68,6 @@ p {
     </style>
   </head>
   <body>
-    p>musick:<audio  src="block_ser_mus.wav" id="mm" controls loop></audio></p>
     <div id="login" width="100%" height="100%">
     <p>sign up<input type="range" max="1" min="0" id="isl">log in</p><br>
 
@@ -79,7 +76,6 @@ p {
       <button type="button" onclick="log()" name="button">login</button>
     </div>
     <div id="gff">
-      <p id="hp1">hp:<span id="hp">100</span></p>
 <p>score:<span id="scoree">0</span></p>
 <button onclick="ss()">share yore score</button><br>
 <div id="gs" >
@@ -196,9 +192,8 @@ p {
 <svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg>
     </template>
   <template>
-<svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="lightBlue" stroke="black" /></svg>
-</template>
-
+<svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg>
+  </template>
     <br>
 
     <button onclick="shower()">resipes</button>
@@ -241,13 +236,10 @@ p {
  <rect name="blocka1" x="0" y="0" width="10px" height="10px" id="block1" fill="brown">
 </g>
 </g>
-<rect  name="l1p" x="110" y="0" width="30px" height="20px" fill="purple" />
 <g >
  <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="green">
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
-
-
 <rect  id="pl" x="0" y="0" width="10px" height="10px" fill="cyan" />
 <!-- <polygon id="pl" x="0" y="0" points="4,10 1,6 3,6 3,2 5,0 7,2 7,6 6,6 6,10 4,10" fill="red" stroke="black" /> -->
 
@@ -742,27 +734,6 @@ p {
       <tr>
         <th></th>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
-        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
-        <td></td>
-        <th>=</th>
-        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="lightBlue" stroke="black" /></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th></th>
-      </tr>
       <!-- <tr>
         <td></td>
         <td></td>
@@ -789,45 +760,7 @@ p {
 <script src=
 "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
-
 <script>
-setInterval(function(){
-  if (x == 110 && y == 0) {
-    hp -= 10
-  }
-  if (x == 120 && y == 0) {
-    hp -= 10
-  }
-  if (x == 130 && y == 0) {
-    hp -= 10
-  }
-  if (x == 140 && y == 0) {
-    hp -= 10
-  }
-  if (x == 110 && y == 1) {
-    hp -= 10
-  }
-  if (x == 120 && y == 1) {
-    hp -= 10
-  }
-  if (x == 130 && y == 1) {
-    hp -= 10
-  }
-  if (x == 140 && y == 1) {
-    hp -= 10
-
-  }
-  if (hp <= 0) {
-    document.getElementById("gs").style.display = "none";
-    document.getElementById("cr").style.display = "none";
-    document.getElementById("dead").style.display = "block";
-    document.getElementById("hp1").style.display = "none"
-  }
-},2000)
-setInterval(function() {
-  document.getElementById("hp").innerHTML = hp;
-},1)
-
 var hi
 var ro = 1
 var matcc
@@ -877,7 +810,6 @@ function shower() {
             document.getElementById("gs").style.display = "none";
             document.getElementById("cr").style.display = "none";
             document.getElementById("dead").style.display = "block";
-                document.getElementById("hp1").style.display = "none"
           }
         }
       }
@@ -1012,7 +944,6 @@ alert("try agen")
                 document.getElementById("gs").style.display = "none";
                 document.getElementById("cr").style.display = "none";
                 document.getElementById("dead").style.display = "block";
-                    document.getElementById("hp1").style.display = "none"
               }
             }
           }
@@ -1029,65 +960,12 @@ alert("try agen")
           }
         },50)
       }
-  }else if (document.getElementById('isl').value == 0){
+  }else if (document.getElementById('isl').value == 0)
 
     localStorage.userName3 = document.getElementsByTagName("input")[1].value
     localStorage.password2 = document.getElementsByTagName("input")[2].value
-    document.getElementById("gff").style.display = "block";
-    document.getElementById("login").style.display = "none";
-    mmcc = setInterval(function() {
-      for (var i = 0; i < mx.length; i++) {
 
-       if (mx[i] > x) {
-         mx[i] -= 10
-         document.getElementsByName("mob")[i].setAttribute("x",mx[i])
-       }
-       if (mx[i] < x) {
-         mx[i] += 10
-         document.getElementsByName("mob")[i].setAttribute("x",mx[i])
-       }
-
-      }
-      for (var i = 0; i < mhp.length; i++) {
-       if (my[i] > y) {
-         my[i] -= 10
-      document.getElementsByName("mob")[i].setAttribute("y",my[i])
-       }
-       if (my[i] < y) {
-         my[i] += 10
-         document.getElementsByName("mob")[i].setAttribute("y",my[i])
-       }
-      }
-    },3000)
-    matcc = setInterval(function() {
-      for (var i = 0; i < mx.length; i++) {
-        if(mx[i] == x  && my[i] == y) {
-          hp -= 10
-          if (ei==12){
-            hp += 3;
-          }
-          if (hp <= 0) {
-            document.getElementById("gs").style.display = "none";
-            document.getElementById("cr").style.display = "none";
-            document.getElementById("dead").style.display = "block";
-                document.getElementById("hp1").style.display = "none"
-          }
-        }
-      }
-    },30000)
-   setInterval(function() {
-      for (var i = 0; i < mx.length; i++) {
-        if(mx[i] == x  && my[i] == y) {
-        document.getElementById("monster").style.display = "block";
-        document.getElementById("mhpo").innerHTML = "monster hp:" + mhp[i];
-        document.getElementById("matc").innerHTML = "monster atc:10";
-      }else{
-        document.getElementById("monster").style.display = "none";
-      }
-      }
-    },50)
   }
-}
   var lar
   var as = 1;
 const slo = [0,0,0,0,0,0,0,0,0,0];
@@ -1222,7 +1100,7 @@ x+=10
        }
      }
 
-
+  
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
@@ -1245,7 +1123,7 @@ y -= 10
       }
     }
     cx -= 14
-
+ 
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
 //     for (var i = 0; i < 1000; i++) {
@@ -1265,7 +1143,7 @@ if (as == 2) {
   y += 10
   }
 }
-
+  
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
   //   for (var i = 0; i < 1000; i++) {
@@ -1471,18 +1349,6 @@ for(var ae = 0; ae <= 6; ae++){
     as=1;
   },20000)
 }
-if (ei == 16) {
-
-for(var ae = 0; ae <= 6; ae++){
-  if(is[ae] == 16) {
-    document.getElementsByName("ae")[ae].innerHTML = "";
-    is[ae] = 0;
-  }
-  as = 2;
-  setTimeout(function() {
-    as=1;
-  },50000)
-}
 }
 
 }
@@ -1608,13 +1474,6 @@ for(var ae = 0; ae <= 6; ae++){
           document.getElementsByName("aee")[f].innerHTML = "";
           document.getElementsByName("aee")[f].appendChild(clo);
         }
-        if (ei == 16) {
-          var f = a - 1
-          var tem = document.getElementsByTagName("template")[15];
-          var clo = tem.content.cloneNode(true);
-          document.getElementsByName("aee")[f].innerHTML = "";
-          document.getElementsByName("aee")[f].appendChild(clo);
-        }
         if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
           var temp = document.getElementsByTagName("template")[0];
           var clon = temp.content.cloneNode(true);
@@ -1683,17 +1542,6 @@ for(var ae = 0; ae <= 6; ae++){
         }else if (slot[1] == 0 && slot[2] == 2 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 13 && slot[9] == 0) {
 
           var temp = document.getElementsByTagName("template")[13];
-          var clon = temp.content.cloneNode(true);
-          document.getElementById("a").appendChild(clon);
-        }else if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 13 && slot[9] == 0) {
-
-          var temp = document.getElementsByTagName("template")[14];
-          var clon = temp.content.cloneNode(true);
-          document.getElementById("a").appendChild(clon);
-        }
-        else if (slot[1] == 0 && slot[2] == 0 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 15 && slot[9] == 0) {
-
-          var temp = document.getElementsByTagName("template")[15];
           var clon = temp.content.cloneNode(true);
           document.getElementById("a").appendChild(clon);
         }
@@ -2253,50 +2101,6 @@ var e = ae + 1
 is[ae] = 15;
 
 ae = 10;
-}
-}
-}else if (slot[1] == 0 && slot[2] == 0 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 15 && slot[9] == 0) {
-  score += 10
-  document.getElementById("scoree").innerHTML = score;
-document.getElementById("a").innerHTML = "";
-slot[1] = 0;
-slot[2] = 0;
-slot[3] = 0;
-slot[4] = 0;
-slot[5] = 0;
-slot[6] = 0;
-slot[7] = 0;
-slot[8] = 0;
-slot[9] = 0;
-
-for(var afa = 0;afa < 9; afa++) {
-document.getElementsByName("aee")[afa].innerHTML = "";
-
-}
-for(var ae = 0; ae <= 6; ae++){
-  if (is[ae] == 15) {
-    document.getElementsByName("ae")[ae].innerHTML = "";
-    is[ae] = 0;
-  }
-  if (is[ae] == 4) {
-    document.getElementsByName("ae")[ae].innerHTML = "";
-    is[ae] = 0;
-  }
-}
-for(var ae = 0; ae <= 6; ae++){
-if (is[ae] == 0) {
-
-  var temp = document.getElementsByTagName("template")[15];
-var clon = temp.content.cloneNode(true);
-document.getElementsByName("ae")[ae].appendChild(clon);
-var e = ae + 1
-
-
-
-is[ae] = 16;
-
-ae = 10;
-}
 }
 }
 }
