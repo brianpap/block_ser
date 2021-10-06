@@ -79,7 +79,7 @@ p {
       <button type="button" onclick="log()" name="button">login</button>
     </div>
     <div id="gff">
-      <p>hp:<span id="hp">100</span></p>
+      <p id="hp1">hp:<span id="hp">100</span></p>
 <p>score:<span id="scoree">0</span></p>
 <button onclick="ss()">share yore score</button><br>
 <div id="gs" >
@@ -804,16 +804,16 @@ setInterval(function(){
   if (x == 140 && y == 0) {
     hp -= 10
   }
-  if (x == 110 && y == 10) {
+  if (x == 110 && y == 1) {
     hp -= 10
   }
-  if (x == 120 && y == 10) {
+  if (x == 120 && y == 1) {
     hp -= 10
   }
-  if (x == 130 && y == 10) {
+  if (x == 130 && y == 1) {
     hp -= 10
   }
-  if (x == 140 && y == 10) {
+  if (x == 140 && y == 1) {
     hp -= 10
 
   }
@@ -821,6 +821,7 @@ setInterval(function(){
     document.getElementById("gs").style.display = "none";
     document.getElementById("cr").style.display = "none";
     document.getElementById("dead").style.display = "block";
+    document.getElementById("hp1").style.display = "none"
   }
 },2000)
 setInterval(function() {
@@ -876,6 +877,7 @@ function shower() {
             document.getElementById("gs").style.display = "none";
             document.getElementById("cr").style.display = "none";
             document.getElementById("dead").style.display = "block";
+                document.getElementById("hp1").style.display = "none"
           }
         }
       }
@@ -1010,6 +1012,7 @@ alert("try agen")
                 document.getElementById("gs").style.display = "none";
                 document.getElementById("cr").style.display = "none";
                 document.getElementById("dead").style.display = "block";
+                    document.getElementById("hp1").style.display = "none"
               }
             }
           }
@@ -1067,6 +1070,7 @@ alert("try agen")
             document.getElementById("gs").style.display = "none";
             document.getElementById("cr").style.display = "none";
             document.getElementById("dead").style.display = "block";
+                document.getElementById("hp1").style.display = "none"
           }
         }
       }
