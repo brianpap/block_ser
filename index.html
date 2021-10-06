@@ -194,7 +194,7 @@ p {
 <svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg>
     </template>
   <template>
-<svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="blue" stroke="black" /></svg>
+<svg width="50" height="50" viewbox="0 0 100 100"><polygon points="40,0 60,0 60,10 100,10 100,100 0,100 0,10 40,10 40,0" fill="darkblue" stroke="black" /></svg>
   </template>
     <br>
 
@@ -228,14 +228,14 @@ p {
 <svg id="gf" width="300px" height="300px">
 <g id="ga">
   <g name="block">
-   <rect name="blocka3" x="0" y="0" width="10px" height="10px" id="block3" fill="red">
+   <rect name="blocka3" x="0" y="0" width="10px" height="10px" id="block3" fill="darkRed">
   </g>
 <!-- <g name="block"> -->
   <g name="block">
-   <rect name="blocka2" x="0" y="0" width="10px" height="10px" id="block2" fill="white">
+   <rect name="blocka2" x="0" y="0" width="10px" height="10px" id="block2" fill="blue">
   </g>
 <g name="block">
- <rect name="blocka1" x="0" y="0" width="10px" height="10px" id="block1" fill="brown">
+ <rect name="blocka1" x="0" y="0" width="10px" height="10px" id="block1" fill="darkBrown">
 </g>
 </g>
 <g >
@@ -1102,7 +1102,7 @@ x+=10
        }
      }
 
-  
+
   // var s = document.getElementById("pl");
   // var t = document.getElementsByName("bl")[x]
   // t.appendChild(s);
@@ -1125,7 +1125,7 @@ y -= 10
       }
     }
     cx -= 14
- 
+
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
 //     for (var i = 0; i < 1000; i++) {
@@ -1145,7 +1145,7 @@ if (as == 2) {
   y += 10
   }
 }
-  
+
   document.getElementById("pl").setAttribute("y",y);
   // if(cx == op1) {
   //   for (var i = 0; i < 1000; i++) {
@@ -1352,6 +1352,19 @@ for(var ae = 0; ae <= 6; ae++){
   },20000)
 }
 }
+if (ei == 16) {
+
+for(var ae = 0; ae <= 6; ae++){
+  if(is[ae] == 16) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+  as = 2;
+  setTimeout(function() {
+    as=1;
+  },50000)
+}
+}
 
 }
 
@@ -1476,6 +1489,13 @@ for(var ae = 0; ae <= 6; ae++){
           document.getElementsByName("aee")[f].innerHTML = "";
           document.getElementsByName("aee")[f].appendChild(clo);
         }
+        if (ei == 16) {
+          var f = a - 1
+          var tem = document.getElementsByTagName("template")[15];
+          var clo = tem.content.cloneNode(true);
+          document.getElementsByName("aee")[f].innerHTML = "";
+          document.getElementsByName("aee")[f].appendChild(clo);
+        }
         if (slot[1] == 0 && slot[2] == 1 && slot[3] == 0 && slot[4] == 0 && slot[5] == 1 && slot[6] == 0 && slot[7] == 0 && slot[8] == 0 && slot[9] == 0) {
           var temp = document.getElementsByTagName("template")[0];
           var clon = temp.content.cloneNode(true);
@@ -1544,6 +1564,16 @@ for(var ae = 0; ae <= 6; ae++){
         }else if (slot[1] == 0 && slot[2] == 2 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 13 && slot[9] == 0) {
 
           var temp = document.getElementsByTagName("template")[13];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }else if (slot[1] == 0 && slot[2] == 4 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 13 && slot[9] == 0) {
+
+          var temp = document.getElementsByTagName("template")[14];
+          var clon = temp.content.cloneNode(true);
+          document.getElementById("a").appendChild(clon);
+        }else if (slot[1] == 0 && slot[2] == 0 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 15 && slot[9] == 0) {
+
+          var temp = document.getElementsByTagName("template")[15];
           var clon = temp.content.cloneNode(true);
           document.getElementById("a").appendChild(clon);
         }
@@ -2101,6 +2131,45 @@ var e = ae + 1
 
 
 is[ae] = 15;
+
+ae = 10;
+}
+}
+}else if (slot[1] == 0 && slot[2] == 0 && slot[3] == 0 && slot[4] == 0 && slot[5] == 4 && slot[6] == 0 && slot[7] == 0 && slot[8] == 15 && slot[9] == 0) {
+  score += 10
+  document.getElementById("scoree").innerHTML = score;
+document.getElementById("a").innerHTML = "";
+slot[1] = 0;
+slot[2] = 0;
+slot[3] = 0;
+slot[4] = 0;
+slot[5] = 0;
+slot[6] = 0;
+slot[7] = 0;
+slot[8] = 0;
+slot[9] = 0;
+
+for(var afa = 0;afa < 9; afa++) {
+document.getElementsByName("aee")[afa].innerHTML = "";
+
+}
+for(var ae = 0; ae <= 6; ae++){
+  if (is[ae] == 4) {
+    document.getElementsByName("ae")[ae].innerHTML = "";
+    is[ae] = 0;
+  }
+}
+for(var ae = 0; ae <= 6; ae++){
+if (is[ae] == 0) {
+
+  var temp = document.getElementsByTagName("template")[15];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 16;
 
 ae = 10;
 }
