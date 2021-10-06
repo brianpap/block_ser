@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    
+
     <title>block servivel</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
+
     <style>
      body {
        background-color: black
@@ -79,6 +79,7 @@ p {
       <button type="button" onclick="log()" name="button">login</button>
     </div>
     <div id="gff">
+      <p>hp:<span id="hp">100</span></p>
 <p>score:<span id="scoree">0</span></p>
 <button onclick="ss()">share yore score</button><br>
 <div id="gs" >
@@ -240,10 +241,13 @@ p {
  <rect name="blocka1" x="0" y="0" width="10px" height="10px" id="block1" fill="brown">
 </g>
 </g>
+<rect  name="l1p" x="110" y="0" width="30px" height="20px" fill="purple" />
 <g >
  <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="green">
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
+
+
 <rect  id="pl" x="0" y="0" width="10px" height="10px" fill="cyan" />
 <!-- <polygon id="pl" x="0" y="0" points="4,10 1,6 3,6 3,2 5,0 7,2 7,6 6,6 6,10 4,10" fill="red" stroke="black" /> -->
 
@@ -787,8 +791,41 @@ p {
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
 
 <script>
+setInterval(function(){
+  if (x == 110 && y == 0) {
+    hp -= 10
+  }
+  if (x == 120 && y == 0) {
+    hp -= 10
+  }
+  if (x == 130 && y == 0) {
+    hp -= 10
+  }
+  if (x == 140 && y == 0) {
+    hp -= 10
+  }
+  if (x == 110 && y == 1) {
+    hp -= 10
+  }
+  if (x == 120 && y == 1) {
+    hp -= 10
+  }
+  if (x == 130 && y == 1) {
+    hp -= 10
+  }
+  if (x == 140 && y == 1) {
+    hp -= 10
 
-
+  }
+  if (hp <= 0) {
+    document.getElementById("gs").style.display = "none";
+    document.getElementById("cr").style.display = "none";
+    document.getElementById("dead").style.display = "block";
+  }
+},2000)
+setInterval(function() {
+  document.getElementById("hp").innerHTML = hp;
+},1)
 
 var hi
 var ro = 1
