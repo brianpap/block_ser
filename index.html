@@ -81,6 +81,7 @@ p {
 <p>score:<span id="scoree">0</span></p>
 <button onclick="ss()">share yore score</button><br>
 <div id="gs" >
+  <p>hp:<span id="hpb">100</span></p>
     <table>
       <tr>
         <td class="c"></td>
@@ -226,6 +227,7 @@ p {
         <th height="50"></th>
       </tr>
 <svg id="gf" width="300px" height="300px">
+
 <g id="ga">
   <g name="block">
    <rect name="blocka3" x="0" y="0" width="10px" height="10px" id="block3" fill="darkRed">
@@ -237,9 +239,12 @@ p {
 <g name="block">
  <rect name="blocka1" x="0" y="0" width="10px" height="10px" id="block1" fill="darkBrown">
 </g>
+
 </g>
+<rect x="110" y="0" width="30" height="40" fill="red" />
+<rect x="0" y="110" width="40" height="30" fill="gold" />
 <g >
- <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="green">
+ <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="#39ff14">
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
 <rect  id="pl" x="0" y="0" width="10px" height="10px" fill="cyan" />
@@ -763,9 +768,112 @@ p {
 "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
 <script>
+setInterval(function(){
+  document.getElementById("hpb").innerHTML = hp;
+},1)
 var hi
 var ro = 1
 var matcc
+setInterval(function(){
+  if (x == 110 && y == 0) {
+    hp -= 10
+}
+    if (x == 120 && y == 0) {
+      hp -= 10
+    }
+    if (x == 130 && y == 0) {
+      hp -= 10
+    }
+    if (x == 110 && y == 10) {
+      hp -= 10
+}
+      if (x == 120 && y == 10) {
+        hp -= 10
+      }
+      if (x == 130 && y == 10) {
+        hp -= 10
+      }
+      if (x == 110 && y == 20) {
+        hp -= 10
+      }
+        if (x == 120 && y == 20) {
+          hp -= 10
+        }
+        if (x == 130 && y == 20) {
+          hp -= 10
+        }
+        if (x == 110 && y == 30) {
+          hp -= 10
+}
+          if (x == 120 && y == 30) {
+            hp -= 10
+          }
+          if (x == 130 && y == 30) {
+            hp -= 10
+          }
+          if (x == 110 && y == 40) {
+            hp -= 10
+}
+            if (x == 120 && y == 40) {
+              hp -= 10
+            }
+            if (x == 130 && y == 40) {
+              hp -= 10
+            }
+            if (hp <= 0) {
+              document.getElementById("gs").style.display = "none";
+              document.getElementById("cr").style.display = "none";
+              document.getElementById("dead").style.display = "block";
+            }
+},1000)
+setInterval(function(){
+  if (x == 0 && y == 110) {
+    hp += 10
+}
+    if (x == 0 && y == 120) {
+      hp += 10
+    }
+    if (x == 0 && y == 130) {
+      hp += 10
+    }
+    if (x == 10 && y == 110) {
+      hp += 10
+}
+      if (x == 10 && y == 120) {
+        hp += 10
+      }
+      if (x == 10 && y == 130) {
+        hp += 10
+      }
+      if (x == 20 && y == 110) {
+        hp += 10
+      }
+        if (x == 20 && y == 120) {
+          hp += 10
+        }
+        if (x == 20 && y == 130) {
+          hp += 10
+        }
+        if (x == 30 && y == 110) {
+          hp += 10
+}
+          if (x == 30 && y == 120) {
+            hp += 10
+          }
+          if (x == 30 && y == 130) {
+            hp += 10
+          }
+          if (x == 40 && y == 110) {
+            hp += 10
+}
+            if (x == 40 && y == 120) {
+              hp += 10
+            }
+            if (x == 40 && y == 130) {
+              hp += 10
+            }
+
+},1000)
 function shower() {
   if(ro == 1){
     document.getElementById("cr").style.display='block';
