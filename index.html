@@ -283,7 +283,7 @@ p {
 </tr>
 </table>
 </div>
-<div id"tradem" style="display: none;">
+<div id="tradem" style="display: none;">
 <button onclick="tradd(1,1)">trade 2 score for a   <svg width="50" height="50" viewbox="0 0 100 100">
     <rect x="45" y="0" width="10" height="100" fill="brown" />
   </svg></button>
@@ -1519,8 +1519,68 @@ if (x == 90 && y == 90){
 
 function traydd(a,b) {
   if(a ==1) {
+if (b == 1) {
+  if (score => 2) {
+  for(var ae = 0; ae <= 6; ae++){
+        if (is[ae] == 0) {
+score -= 2
+          var temp = document.getElementsByTagName("template")[1];
+  var clon = temp.content.cloneNode(true);
+  document.getElementsByName("ae")[ae].appendChild(clon);
+  var e = ae + 1
 
+
+
+  is[ae] = 2;
+
+  ae = 10;
   }
+      }
+    }
+}
+  }
+  if(a ==3) {
+if (b == 1) {
+  if (score => 5) {
+  for(var ae = 0; ae <= 6; ae++){
+        if (is[ae] == 0) {
+score -= 5
+          var temp = document.getElementsByTagName("template")[3];
+  var clon = temp.content.cloneNode(true);
+  document.getElementsByName("ae")[ae].appendChild(clon);
+  var e = ae + 1
+
+
+
+  is[ae] = 4;
+
+  ae = 10;
+  }
+      }
+    }
+}
+  }
+//   if(a ==2) {
+// if (b == 1) {
+//   if (score => 50) {
+//   for(var ae = 0; ae <= 6; ae++){
+//         if (is[ae] == 0) {
+// score -= 50
+//           var temp = document.getElementsByTagName("template")[3];
+//   var clon = temp.content.cloneNode(true);
+//   document.getElementsByName("ae")[ae].appendChild(clon);
+//   var e = ae + 1
+// 
+// 
+// 
+//   is[ae] = 4;
+// 
+//   ae = 10;
+//   }
+//       }
+//     }
+// }
+//   }
 }
       function inv(a) {
         ei = is[a]
