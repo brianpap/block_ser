@@ -7,13 +7,6 @@
     <link rel="shortcut icon" href="favicon.ico"
  />
     <style>
-      
-.gf2 {
-  
-  margin: auto;
-  
-  padding: 10px;
-}
      body {
        background-color: black
      }
@@ -77,10 +70,14 @@ p {
 #tradem {
   display: none;
 }
+* {
+
+    margin-left: 5%;
+    margin-right: 5%;
+  }
     </style>
   </head>
   <body>
-    <div class="gf2">
     <div id="login" width="100%" height="100%">
     <p>sign up<input type="range" max="1" min="0" id="isl">log in</p><br>
 
@@ -89,7 +86,7 @@ p {
       <button type="button" onclick="log()" name="button">login</button>
     </div>
     <div id="gff">
-      <audio href="block_ser_mus.wav" controls></audio
+      <audio href="block_ser_mus.wav" controls></audio>
 <p>score:<span id="scoree">0</span></p>
 <button onclick="ss()">share yore score</button><br>
 <div id="gs" >
@@ -261,7 +258,10 @@ p {
  <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="#39ff14">
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
-<rect  id="pl" x="0" y="0" width="10px" height="10px" fill="cyan" />
+<defs >
+  <polygon  id="pla"  points="1,1 5,0 5,5 0,5 1,1" fill="cyan" />
+  </defs>
+  <use id="pl"  x="0" y="0" xlink:href="#pla"/>
 <!-- <polygon id="pl" x="0" y="0" points="4,10 1,6 3,6 3,2 5,0 7,2 7,6 6,6 6,10 4,10" fill="red" stroke="black" /> -->
 
 </svg>
@@ -812,7 +812,6 @@ p {
     </tbody>
   </table>
 </div>
-      </div>
 <script src=
 "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
