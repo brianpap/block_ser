@@ -1244,7 +1244,7 @@ if(x != 0){
   // t.appendChild(s);
   document.getElementById("pl").setAttribute("x",x)
   // if(cx == op1) {
-  //   for (var i = 0; i < 1000; i++) {
+  //   for (var i = 0; i < 1000; i++) { 
   //
   //
   //   document.getElementsByName("blocka1")[i].style.display = "none";
@@ -1428,7 +1428,10 @@ mc += 10
     }
   }
 }
-          }else{
+          }
+          if(x == mx[i] && y == my[i]) {
+            if(ei != 3 &&ei != 5 && ei != 9){
+            
     mhp[i] -= 10;
     if(ab == 2){
       mhp[i] -= 10;
@@ -1463,6 +1466,7 @@ mhp[i] = 100
 
 }
   }
+}
 }
 
 if (ei == 10) {
