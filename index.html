@@ -3,6 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>block servivel</title>
     <link rel="shortcut icon" href="favicon.ico"
  />
@@ -1042,7 +1043,7 @@ var hp = 100;
                   pubnub.publish({
                       channel: channel,
 
-                      message: userName2 + ":i have " + input.innerHTML
+                      message: userName2 + ":i have " + input.innerHTML + "<br>"
 
                   });
                 }
@@ -1060,7 +1061,61 @@ var hp = 100;
             var password
             var userName2
 
+if (sessionStorage.li == "1") {
+  document.getElementById("gff").style.display = "block";
+  document.getElementById("login").style.display = "none";
+  mmcc = setInterval(function() {
+    for (var i = 0; i < mx.length; i++) {
 
+     if (mx[i] > x) {
+       mx[i] -= 10
+       document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+     }
+     if (mx[i] < x) {
+       mx[i] += 10
+       document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+     }
+
+    }
+    for (var i = 0; i < mhp.length; i++) {
+     if (my[i] > y) {
+       my[i] -= 10
+    document.getElementsByName("mob")[i].setAttribute("y",my[i])
+     }
+     if (my[i] < y) {
+       my[i] += 10
+       document.getElementsByName("mob")[i].setAttribute("y",my[i])
+     }
+    }
+  },3000)
+  matcc = setInterval(function() {
+    for (var i = 0; i < mx.length; i++) {
+      if(mx[i] == x  && my[i] == y) {
+        hp -= 10
+        if (ei==12){
+          hp += 3;
+        }
+        if (hp <= 0) {
+          document.getElementById("gs").style.display = "none";
+          document.getElementById("cr").style.display = "none";
+          document.getElementById("dead").style.display = "block";
+        }
+      }
+    }
+  },30000)
+ setInterval(function() {
+    for (var i = 0; i < mx.length; i++) {
+      if(mx[i] == x  && my[i] == y) {
+      document.getElementById("monster").style.display = "block";
+      document.getElementById("mhpo").innerHTML = "monster hp:" + mhp[i];
+      document.getElementById("matc").innerHTML = "monster atc:10";
+    }else{
+      document.getElementById("monster").style.display = "none";
+    }
+    }
+  },50)
+     userName2 = sessionStorage.userName
+}else{
 function log() {
   if(document.getElementById('isl').value == 1){
     password = localStorage.password2
@@ -1070,6 +1125,9 @@ function log() {
       if (name != userName2 || name2 != password) {
 alert("try agen")
       }else if (name == userName2 && name2 == password) {
+        sessionStorage.userName = userName2
+        sessionStorage.li = "1"
+
         document.getElementById("gff").style.display = "block";
         document.getElementById("login").style.display = "none";
         mmcc = setInterval(function() {
@@ -1123,12 +1181,68 @@ alert("try agen")
           }
         },50)
       }
-  }else if (document.getElementById('isl').value == 0)
+  }else if (document.getElementById('isl').value == 0){
 
     localStorage.userName3 = document.getElementsByTagName("input")[1].value
     localStorage.password2 = document.getElementsByTagName("input")[2].value
+    sessionStorage.userName = document.getElementsByTagName("input")[1].value
+    sessionStorage.li = "1"
 
+    document.getElementById("gff").style.display = "block";
+    document.getElementById("login").style.display = "none";
+    mmcc = setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+
+       if (mx[i] > x) {
+         mx[i] -= 10
+         document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+       }
+       if (mx[i] < x) {
+         mx[i] += 10
+         document.getElementsByName("mob")[i].setAttribute("x",mx[i])
+       }
+
+      }
+      for (var i = 0; i < mhp.length; i++) {
+       if (my[i] > y) {
+         my[i] -= 10
+      document.getElementsByName("mob")[i].setAttribute("y",my[i])
+       }
+       if (my[i] < y) {
+         my[i] += 10
+         document.getElementsByName("mob")[i].setAttribute("y",my[i])
+       }
+      }
+    },3000)
+    matcc = setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+        if(mx[i] == x  && my[i] == y) {
+          hp -= 10
+          if (ei==12){
+            hp += 3;
+          }
+          if (hp <= 0) {
+            document.getElementById("gs").style.display = "none";
+            document.getElementById("cr").style.display = "none";
+            document.getElementById("dead").style.display = "block";
+          }
+        }
+      }
+    },30000)
+    setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+        if(mx[i] == x  && my[i] == y) {
+        document.getElementById("monster").style.display = "block";
+        document.getElementById("mhpo").innerHTML = "monster hp:" + mhp[i];
+        document.getElementById("matc").innerHTML = "monster atc:10";
+      }else{
+        document.getElementById("monster").style.display = "none";
+      }
+      }
+    },50)
+    }
   }
+}
   var lar
   var as = 1;
 const slo = [0,0,0,0,0,0,0,0,0,0];
@@ -1244,7 +1358,7 @@ if(x != 0){
   // t.appendChild(s);
   document.getElementById("pl").setAttribute("x",x)
   // if(cx == op1) {
-  //   for (var i = 0; i < 1000; i++) { 
+  //   for (var i = 0; i < 1000; i++) {
   //
   //
   //   document.getElementsByName("blocka1")[i].style.display = "none";
@@ -1408,7 +1522,8 @@ mc += 10
               mc -= 1
               if (mc == 0) {
                 for (var i = 0; i < 10; i++) {
-                  // Get the last <li> element ("Milk") of <ul> with id="myList2"
+                  // Get the last <li> element ("Milk") of <ul> with
+                   id="myList2"
  mc += 10
         mx[i] = Math.floor(Math.random() * 15)
         my[i] = Math.floor(Math.random() * 15)
@@ -1431,7 +1546,7 @@ mc += 10
           }
           if(x == mx[i] && y == my[i]) {
             if(ei != 3 &&ei != 5 && ei != 9){
-            
+
     mhp[i] -= 10;
     if(ab == 2){
       mhp[i] -= 10;
@@ -1470,9 +1585,10 @@ mhp[i] = 100
 }
 
 if (ei == 10) {
-  for(i = 0;i < 10000; i++){
+  for(i = 0;i < 100000; i++){
   lar = 2;
 document.getElementsByName("blocka1")[i].style.display = "none";
+
 lar = 2;
 }
 }
