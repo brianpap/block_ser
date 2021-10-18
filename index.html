@@ -3,8 +3,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-     <meta name="viewport" content="width=400px, user-scalable=no"> 
-    <!-- meta content=’width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0′ name=’viewport’ /> -->
+    <!-- <meta name="viewport" content="400px, user-scalable=no"> -->
+    <meta content=’width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0′ name=’viewport’ />
     <title>block servivel</title>
     <link rel="shortcut icon" href="favicon.ico"
  />
@@ -238,7 +238,7 @@ p {
       <tr>
         <th height="50"></th>
       </tr>
-<svg id="gf" width="300px" height="300px">
+<svg id="gf" width="300px" height="300px" >
 
 <g id="ga">
   <g name="block">
@@ -257,17 +257,26 @@ p {
 <rect x="0" y="110" width="40" height="30" fill="gold" />
 <rect x="90" y="90" width="10" height="10" fill="brown"/>
 <g >
- <rect name="mob" x="10" y="0" width="10px" height="10px"  fill="#39ff14">
+  <defs>
+    <g id="mob1">
+      <rect width="10" height="10" x="0" y="0" fill="white" />
+    <polygon    points="0,0 10,0 10,10 0,10 0,0 2,3 2,6 4,6 4,3 2,3 6,3 6,6 8,6 8,3 10,0 8,3 6,3" fill="cyan" stroke="red" />
+
+  </g>
+    </defs>
+
+    <use name="mob"  x="0" y="0" xlink:href="#mob1"/>
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
 <defs>
   <g id="pla">
-  <polygon    points="5,0 9,5 9,10 6,10 6,8 4,8 4,10 1,10 1,5  9,5 5,0 1,5" fill="cyan" stroke="red"/>
-  <polygon   points="1,5  9,5 5,0 1,5" fill="green" stroke="red"/>
-  <rect width="2" height="2" x="1" y="3" fill="black" />
-  <rect width="2" height="2" x="7" y="3" fill="black" />
+  <polygon points="5,0 9,5 9,10 6,10 6,8 4,8 4,10 1,10 1,5  9,5 5,0 1,5" fill="cyan" stroke="red"></polygon>
+  <polygon points="1,5  9,5 5,0 1,5" fill="green" stroke="red"></polygon>
+  <rect width="3" height="3" x="1" y="3" fill="black"></rect>
+  <rect width="3" height="3" x="6" y="3" fill="black"></rect>
 </g>
   </defs>
+
   <use id="pl"  x="0" y="0" xlink:href="#pla"/>
 <!-- <polygon id="pl" x="0" y="0" points="4,10 1,6 3,6 3,2 5,0 7,2 7,6 6,6 6,10 4,10" fill="red" stroke="black" /> -->
 
@@ -823,6 +832,9 @@ p {
 "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
 <script>
+
+
+
 setInterval(function(){
   document.getElementById("hpb").innerHTML = hp;
 },1)
@@ -1464,7 +1476,7 @@ function ac() {
     ci.setAttribute("x",mx[i]);
     ci.setAttribute("y",my[i]);
 mc += 10
-    mhp[i] = 100
+mhp[i] = 100
 
 }
           }
@@ -1498,7 +1510,8 @@ mc += 10
     ci.setAttribute("x",mx[i]);
     ci.setAttribute("y",my[i]);
 mc += 10
-    mhp[i] = 100
+mhp[i] = 100
+
 
 }
           }
@@ -1536,6 +1549,7 @@ mc += 10
         ci.setAttribute("y",my[i]);
 
         mhp[i] = 100
+
 
     }
               }
