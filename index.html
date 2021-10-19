@@ -1696,7 +1696,7 @@ mhp[i] = 100
 
         }
         }
-        if(x == mx[i] && y == my[i]) {
+        if(x == mxb && y == myb) {
 
           if(ei == 9){
             mhp[i] -= 50;
@@ -1762,10 +1762,10 @@ mhp[i] = 100
          document.getElementsByName("mob22")[i].setAttribute("y",myb)
        }
       }
-    },3000)
+    },500)
     setInterval(function() {
-      for (var i = 0; i < mx.length; i++) {
-        if(mx[i] == x  && my[i] == y) {
+     // for (var i = 0; i < mx.length; i++) {
+        if(mxb == x  && myb == y) {
           hp -= 50
           if (ei==12){
             hp += 3;
@@ -1776,8 +1776,8 @@ mhp[i] = 100
             document.getElementById("dead").style.display = "block";
           }
         }
-      }
-    },500)
+      //}
+    },2000)
     
 }
 }
