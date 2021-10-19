@@ -263,9 +263,15 @@ p {
     <polygon    points="0,0 10,0 10,10 0,10 0,0 2,3 2,6 4,6 4,3 2,3 6,3 6,6 8,6 8,3 10,0 8,3 6,3" fill="cyan" stroke="red" />
 
   </g>
+  <g id="mob2">
+    <rect width="10" height="10" x="0" y="0" fill="white" />
+  <polygon    points="0,0 10,0 10,10 0,10 0,0 2,3 2,6 4,6 4,3 2,3 6,3 6,6 8,6 8,3 10,0 8,3 6,3" fill="red" stroke="yellow" />
+
+</g>
     </defs>
 
     <use name="mob"  x="0" y="0" xlink:href="#mob1"/>
+    <use name="mob22"  x="-10" y="-10" xlink:href="#mob2"/>
 </g>
 <!-- <rect x="0" y="0" width="10px" height="10px" id="block" fill="brown" /> -->
 <defs>
@@ -308,7 +314,7 @@ p {
 </tr>
 </table>
 </div>
-<div id="tradem" style="display: none;">
+<!-- <div id="tradem" style="display: none;">
 <button onclick="tradd(1,1)">trade 2 score for a   <svg width="50" height="50" viewbox="0 0 100 100">
     <rect x="45" y="0" width="10" height="100" fill="brown" />
   </svg></button>
@@ -328,7 +334,7 @@ p {
     <rect x="0" y="0" width="100" height="100" fill="pink" />
 
   </svg></button>
-</div>
+</div> -->
   score chat
   <div id=box></div>
 </div>
@@ -1616,10 +1622,163 @@ document.getElementById("tradee").style.disable = "block"
 }
 if (ei == 11) {
   for(i = 0;i < 10000; i++){
-  lar = 2;
-document.getElementsByName("blocka2")[i].style.display = "none";
-document.getElementsByName("blocka1")[i].style.display = "none";
-lar = 2;
+    document.getElementsByName("blocka1")[i].style.display = "none";
+    document.getElementsByName("blocka3")[i].style.display = "none";
+    var mhpb = 35000
+    if(x == mxb && y == myb) {
+
+      if(ei == 3){
+        mhpb -= 20;
+        if(ab == 2){
+          mhpb -= 10;
+        }
+        if (mhpb <= 0) {
+
+      mxb = -10
+          myb = -10
+          document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
+          document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+          score += 100
+          document.getElementById("scoree").innerHTML = score;
+          // mc -= 1
+          if (mc == 0) {
+            for (var i = 0; i < 10; i++) {
+              // Get the last <li> element ("Milk") of <ul> with id="myList2"
+
+    mx[i] = Math.floor(Math.random() * 15)
+    my[i] = Math.floor(Math.random() * 15)
+    mx[i] *= 10
+    my[i] *= 10
+
+    var ci = document.getElementsByName("mob")[i];
+    ci.setAttribute("x",mx[i]);
+    ci.setAttribute("y",my[i]);
+mc += 10
+mhp[i] = 100
+
+}
+          }
+
+
+}
+      }
+      if(ei == 5){
+        mhpb -= 35;
+        if(ab == 2){
+          mhpb -= 10;
+        }
+        if (mhpb <= 0) {
+          mxb = -10
+          myb = -10
+          document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
+          document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+          score += 100
+          document.getElementById("scoree").innerHTML = score;
+          // mc -= 1
+          if (mc == 0) {
+            for (var i = 0; i < 10; i++) {
+              // Get the last <li> element ("Milk") of <ul> with id="myList2"
+
+    mx[i] = Math.floor(Math.random() * 15)
+    my[i] = Math.floor(Math.random() * 15)
+    mx[i] *= 10
+    my[i] *= 10
+
+    var ci = document.getElementsByName("mob")[i];
+    ci.setAttribute("x",mx[i]);
+    ci.setAttribute("y",my[i]);
+mc += 10
+mhp[i] = 100
+
+
+}
+          }
+
+        }
+        }
+        if(x == mx[i] && y == my[i]) {
+
+          if(ei == 9){
+            mhp[i] -= 50;
+            if(ab == 2){
+              mhpb -= 10;
+            }
+            if (mhpb <= 0) {
+
+              mxb = -10
+              myb = -10
+              document.getElementsByName("mob")[i].setAttribute("x",mx[i]);
+              document.getElementsByName("mob")[i].setAttribute("y",my[i]);
+              score += 2
+              document.getElementById("scoree").innerHTML = score;
+              mc -= 1
+              if (mc == 0) {
+                for (var i = 0; i < 10; i++) {
+                  // Get the last <li> element ("Milk") of <ul> with
+                   id="myList2"
+ mc += 10
+        mx[i] = Math.floor(Math.random() * 15)
+        my[i] = Math.floor(Math.random() * 15)
+        mx[i] *= 10
+        my[i] *= 10
+
+        var ci = document.getElementsByName("mob")[i];
+        ci.setAttribute("x",mxb);
+        ci.setAttribute("y",myb);
+
+        mhp[i] = 100
+
+
+    }
+              }
+
+
+    }
+  }
+}
+          }
+          var mxb = -10
+          var myb = -10
+    setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+
+       if (mx[i] > x) {
+         mxb -= 10
+         document.getElementsByName("mob22")[i].setAttribute("x",mxb)
+       }
+       if (mx[i] < x) {
+         mxb += 10
+         document.getElementsByName("mob22")[i].setAttribute("x",mxb)
+       }
+
+      }
+      for (var i = 0; i < mhp.length; i++) {
+       if (my[i] > y) {
+         myb -= 10
+      document.getElementsByName("mob22")[i].setAttribute("y",myb)
+       }
+       if (my[i] < y) {
+         myb += 10
+         document.getElementsByName("mob22")[i].setAttribute("y",myb)
+       }
+      }
+    },3000)
+    setInterval(function() {
+      for (var i = 0; i < mx.length; i++) {
+        if(mx[i] == x  && my[i] == y) {
+          hp -= 50
+          if (ei==12){
+            hp += 3;
+          }
+          if (hp <= 0) {
+            document.getElementById("gs").style.display = "none";
+            document.getElementById("cr").style.display = "none";
+            document.getElementById("dead").style.display = "block";
+          }
+        }
+      }
+    },500)
+    
 }
 }
 if (ei == 14) {
