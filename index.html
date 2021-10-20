@@ -1,4 +1,4 @@
-
+<!-- a -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -260,7 +260,7 @@ p {
   <defs>
     <g id="mob1">
       <rect width="10" height="10" x="0" y="0" fill="white" />
-    <polygon    points="0,0 10,0 10,10 0,10 0,0 2,3 2,6 4,6 4,3 2,3 6,3 6,6 8,6 8,3 10,0 8,3 6,3" fill="cyan" stroke="red" />
+    <polygon    name="mpp" points="0,0 10,0 10,10 0,10 0,0 2,3 2,6 4,6 4,3 2,3 6,3 6,6 8,6 8,3 10,0 8,3 6,3" fill="cyan" stroke="red" />
 
   </g>
   <g id="mob2">
@@ -1604,7 +1604,103 @@ mhp[i] = 100
   }
 }
 }
+if(ei == 4){
+    for(i = 0;i < 100000; i++){
+    if(x == mx[i] && y == my[i]) {
+      pex =mx[i]
+pey = my[i]
 
+mx[i] = 0;
+my[i] = 0;
+mc -= 1
+document.getElementsByName("mpp")[i].style.fill = "green"
+alert("give me the item you want to cratht")
+    }
+  }
+}
+if(ei == 1 ) {
+  if(x == pex && y == pex) {
+    setInterval(function() {
+      for(var ae = 0; ae <= 6; ae++){
+
+        if (is[ae] == 0 || is[ae] == 1) {
+
+          var temp = document.getElementsByTagName("template")[0];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 1;
+
+ae = 10;
+}
+}
+},10000)
+  }
+}
+if(ei == 2) {
+  if(x == pex && y == pex) {
+    setInterval(function() {
+      for(var ae = 0; ae <= 6; ae++){
+
+        if (is[ae] == 0 || is[ae] == 2) {
+
+          var temp = document.getElementsByTagName("template")[1];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 2;
+
+ae = 10;
+}
+}
+},10000)
+  }
+}
+if(ei == 3) {
+  if(x == pex && y == pex) {
+    setInterval(function() {
+      for(var ae = 0; ae <= 6; ae++){
+
+        if (is[ae] == 0 || is[ae] == 3) {
+
+          var temp = document.getElementsByTagName("template")[2];
+var clon = temp.content.cloneNode(true);
+document.getElementsByName("ae")[ae].appendChild(clon);
+var e = ae + 1
+
+
+
+is[ae] = 3;
+
+ae = 10;
+}
+}
+},10000)
+  }
+}
+pet(4,3)
+pet(5,4)
+pet(6,5)
+pet(7,6)
+pet(8,7)
+pet(9,8)
+pet(10,9)
+pet(11,10)
+pet(12,11)
+pet(13,12)
+pet(14,13)
+pet(15,14)
+pet(16,15)
+pet(17,16)
+pet(18,17)
+pet(19,18)
+pet(20,19)
 if (ei == 10) {
   for(i = 0;i < 100000; i++){
   lar = 2;
@@ -1624,7 +1720,7 @@ if (ei == 11) {
   for(i = 0;i < 10000; i++){
     document.getElementsByName("blocka1")[i].style.display = "none";
     document.getElementsByName("blocka3")[i].style.display = "none";
-    var mhpb = 35000
+    var mhpb = 350000
     if(x == mxb && y == myb) {
 
       if(ei == 3){
@@ -1696,7 +1792,7 @@ mhp[i] = 100
 
         }
         }
-        if(x == mxb && y == myb) {
+        if(x == mx[i] && y == my[i]) {
 
           if(ei == 9){
             mhp[i] -= 50;
@@ -1762,10 +1858,10 @@ mhp[i] = 100
          document.getElementsByName("mob22")[i].setAttribute("y",myb)
        }
       }
-    },500)
+    },3000)
     setInterval(function() {
-     // for (var i = 0; i < mx.length; i++) {
-        if(mxb == x  && myb == y) {
+      for (var i = 0; i < mx.length; i++) {
+        if(mx[i] == x  && my[i] == y) {
           hp -= 50
           if (ei==12){
             hp += 3;
@@ -1776,9 +1872,9 @@ mhp[i] = 100
             document.getElementById("dead").style.display = "block";
           }
         }
-      //}
+      }
     },500)
-    
+
 }
 }
 if (ei == 14) {
@@ -1890,7 +1986,35 @@ score -= 5
 // }
 //   }
 }
-      function inv(a) {
+var pex
+var pey
+function pet(a,b) {
+  if(ei == a) {
+    if(x == pex && y == pex) {
+      setInterval(function() {
+        for(var ae = 0; ae <= 6; ae++){
+
+          if (is[ae] == 0 || is[ae] == a) {
+
+            var temp = document.getElementsByTagName("template")[b];
+  var clon = temp.content.cloneNode(true);
+  document.getElementsByName("ae")[ae].appendChild(clon);
+  var e = ae + 1
+
+
+
+  is[ae] = a;
+
+  ae = 10;
+
+
+}
+}
+  },10000)
+}
+ }
+}
+  function inv(a) {
         ei = is[a]
       }
 
