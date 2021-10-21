@@ -90,7 +90,7 @@ p {
     <div id="gff">
       <audio href="block_ser_mus.wav" controls></audio>
 <p>score:<span id="scoree">0</span></p>
-<button onclick="ss()">share yore score</button><br>
+<button onclick="ss()">share Your score</button><br>
 <div id="gs" >
   <p>hp:<span id="hpb">100</span></p>
     <table>
@@ -211,7 +211,7 @@ p {
 
     <br>
 
-    <button onclick="shower()">resipes</button>
+    <button onclick="shower()">Recipes</button>
     <br>
     <table>
       <tr>
@@ -310,7 +310,7 @@ p {
   <td id="mhpo"></td><br>
 </tr>
 <tr>
-  <td id="matc"></td>
+  <td id="matc"name></td>
 </tr>
 </table>
 </div>
@@ -1127,7 +1127,7 @@ if (sessionStorage.li == "1") {
       if(mx[i] == x  && my[i] == y) {
       document.getElementById("monster").style.display = "block";
       document.getElementById("mhpo").innerHTML = "monster hp:" + mhp[i];
-      document.getElementById("matc").innerHTML = "monster atc:10";
+      document.getElementById("matc").innerHTML = "Monster ATK:10";
     }else{
       document.getElementById("monster").style.display = "none";
     }
