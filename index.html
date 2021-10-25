@@ -77,6 +77,9 @@ p {
     margin-left: 5%;
     margin-right: 5%;
   }
+  button.btn {
+    border: white;
+  }
     </style>
   </head>
   <body>
@@ -486,14 +489,32 @@ p {
         <th></th>
       </tr>
       <tr>
-        <td>?</td>
-        <td>?</td>
-        <td>?</td>
+        <td> <svg width="50" height="50" viewbox="0 0 100 100">
+          <rect x="0" y="0" width="100" height="100" fill="brown" />
+
+        </svg></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100">
+          <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="white" stroke="black" />
+
+
+        </svg></td>
+        <td> <svg width="50" height="50" viewbox="0 0 100 100">
+          <rect x="0" y="0" width="100" height="100" fill="brown" />
+
+        </svg></td>
       </tr>
       <tr>
-        <td>?</td>
-        <td>?</td>
-        <td>?</td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100"><polygon points="0,0 0,100 100,100 100,0 0,0" fill="white" stroke="black"/>
+        <polygon points="40,50 50,40 60,50 50,60" fill="white" stroke="black"/></svg></td>
+        <td> <svg width="50" height="50" viewbox="0 0 100 100">
+          <rect x="0" y="0" width="100" height="100" fill="brown" />
+
+        </svg></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100">
+          <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="white" stroke="black" />
+
+
+        </svg></td>
         <th>=</th>
         <td><svg width="50" height="50" viewbox="0 0 100 100">
           <polygon points="50,50 0,0 100,0 50,50 100,0 100,100 50,50 100,100 0,100 50,50 0,100  0,0 50,50 0,0" fill="red" stroke="black" strokeWidth="3" />
@@ -502,9 +523,19 @@ p {
         </svg></td>
       </tr>
       <tr>
-        <td>?</td>
-        <td>?</td>
-        <td>?</td>
+        <td> <svg width="50" height="50" viewbox="0 0 100 100">
+          <rect x="0" y="0" width="100" height="100" fill="brown" />
+
+        </svg></td>
+        <td><svg width="50" height="50" viewbox="0 0 100 100">
+          <polygon points="40,100 40,60 30,60 30,20 50,0 70,20 70,60 60,60 60,100 40,100" fill="white" stroke="black" />
+
+
+        </svg></td>
+        <td> <svg width="50" height="50" viewbox="0 0 100 100">
+          <rect x="0" y="0" width="100" height="100" fill="brown" />
+
+        </svg></td>
       </tr>
       <tr>
         <th></th>
@@ -1121,7 +1152,7 @@ if (sessionStorage.li == "1") {
         }
       }
     }
-  },30000)
+  },300)
  setInterval(function() {
     for (var i = 0; i < mx.length; i++) {
       if(mx[i] == x  && my[i] == y) {
@@ -1187,7 +1218,7 @@ alert("try agen")
               }
             }
           }
-        },30000)
+        },300)
        setInterval(function() {
           for (var i = 0; i < mx.length; i++) {
             if(mx[i] == x  && my[i] == y) {
@@ -1247,7 +1278,7 @@ alert("try agen")
           }
         }
       }
-    },30000)
+    },300)
     setInterval(function() {
       for (var i = 0; i < mx.length; i++) {
         if(mx[i] == x  && my[i] == y) {
@@ -2821,22 +2852,21 @@ ae = 10;
 }
 }
 }
-
+// function gb() {
+// 196
+// for (var i = 0; i < mhp.length; i++) {
+//   if (mx[i] == Math.floor(Math.random() * 196)*10 && my[i] == Math.floor(Math.random() * 196)*10) {
+// 
+//   }
+// }
+// }
 
 setInterval(function(){
   hp += 10;
 },16000)
 
 
-setInterval(function(){
-  if (score > hi) {
-    localStorage.hi = score
-    hi = score
-  }else{
-    hi = localStorage.hi
-  }
-  localStorage.chat = null;
-},50)
+
     </script>
   </body>
 </html>
