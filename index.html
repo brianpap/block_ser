@@ -8,6 +8,7 @@
     <title>block servivel</title>
     <link rel="shortcut icon" href="favicon.ico"
  />
+ <script src="ce.js"></script>
     <style>
      body {
        background-color: black
@@ -1904,8 +1905,8 @@ mhp[i] = 100
           }
         }
       }
-    },500)
-
+    },100)
+setInterval(gb(),100)
 }
 }
 if (ei == 14) {
@@ -2852,14 +2853,19 @@ ae = 10;
 }
 }
 }
-// function gb() {
+function gb() {
 // 196
-// for (var i = 0; i < mhp.length; i++) {
-//   if (mx[i] == Math.floor(Math.random() * 196)*10 && my[i] == Math.floor(Math.random() * 196)*10) {
-// 
-//   }
-// }
-// }
+
+  if (x == Math.floor(Math.random() * 14)*10 && y== Math.floor(Math.random() * 14)*10) {
+hp-= 100;
+if (hp <= 0) {
+  document.getElementById("gs").style.display = "none";
+  document.getElementById("cr").style.display = "none";
+  document.getElementById("dead").style.display = "block";
+}
+  }
+}
+}
 
 setInterval(function(){
   hp += 10;
@@ -2870,3 +2876,4 @@ setInterval(function(){
     </script>
   </body>
 </html>
+
