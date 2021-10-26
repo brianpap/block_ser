@@ -1906,7 +1906,9 @@ mhp[i] = 100
         }
       }
     },100)
-setInterval(gb(),100)
+setInterval(function() {
+gb()
+},100)
 }
 }
 if (ei == 14) {
@@ -2862,7 +2864,7 @@ if (hp <= 0) {
   document.getElementById("gs").style.display = "none";
   document.getElementById("cr").style.display = "none";
   document.getElementById("dead").style.display = "block";
-}
+
   }
 }
 }
